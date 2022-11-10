@@ -5,8 +5,8 @@ function myFunction() {
 }
 
 let element1 = document.getElementById('myBtn1');
-element.addEventListener('Prøv og tryk', myFunction);
-function myFunction() {
+element1.addEventListener('click', myFunction2);
+function myFunction2() {
 	alert('Nøjj');
 }
 

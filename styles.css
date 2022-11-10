@@ -1,3 +1,9 @@
-body {
-	color: red;
+.container{
+    display: flex; 
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.textHeader {
+    border: 1px solid black;
 }
