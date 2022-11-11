@@ -7,3 +7,25 @@
 .textHeader {
     border: 1px solid black;
 }
+.textHeader1 {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.hongerdenbedste {
+    width: 200px;
+    text-align: left;
+}
+
+.alignbutton {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.TitleColor {
+    background-color: cadetblue;
+    width: 200px;
+    padding: 10px;
+}
