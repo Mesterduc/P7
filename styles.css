@@ -1,7 +1,6 @@
 .container{
     display: flex; 
     align-items: flex-start;
-    justify-content: space-around;
 }
 
 .textHeader {
@@ -32,4 +31,11 @@
 
 .TableColor {
     background-color: lightgray;
+}
+
+/* reset fieldset property */
+fieldset {
+    border-width: 0px;
+    border-spacing: 0px;
+    margin-inline-start: 0px;
 }
