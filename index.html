@@ -20,16 +20,15 @@
         </tr>
         <tr>
           <td>
-            <section class="textHeader">
-              <h4>Assignment 1</h4>
-            </section>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <section class="textHeader">
-              <h4>Assignment 2</h4>
-            </section>
+            <form style="width: 200px">
+              <fieldset>
+                <label>Title:<br /></label>
+                <input type="text" title="title" /><br />
+                <label>Task description:<br /></label>
+                <textarea type="task" title="task"></textarea><br />
+                <button id="MiaButton">Submit</button>
+              </fieldset>
+            </form>
           </td>
         </tr>
         <tr>
@@ -37,8 +36,15 @@
         </tr>
         <tr>
           <td>
-            <section class="textHeader">
-              <h4>Assignment 3</h4>
+            <section class="textHeader" style="background: rgb(179, 201, 227)">
+              <h4 class="textHeader">Writing part</h4>
+              <h5>Write about equal work distribution</h5>
+              <div>
+                <input type="checkbox" id="in_Progress" name="In progress" />
+                <label for="in_Progress">In Progress</label>
+                <input type="checkbox" id="done" name="Done" />
+                <label for="done">Done</label>
+              </div>
             </section>
           </td>
         </tr>
