@@ -25,7 +25,11 @@
 }
 
 .TitleColor {
-    background-color: cadetblue;
+    background-color:darkgray;
     width: 200px;
     padding: 10px;
+}
+
+.TableColor {
+    background-color: lightgray;
 }
