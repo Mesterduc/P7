@@ -50,3 +50,11 @@
     display: flex;
     justify-content: center;
 }
+
+
+/* reset fieldset property */
+fieldset {
+    border-width: 0px;
+    border-spacing: 0px;
+    margin-inline-start: 0px;
+}
