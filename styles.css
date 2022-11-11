@@ -1,7 +1,6 @@
 .container{
     display: flex; 
     align-items: flex-start;
-    justify-content: space-around;
 }
 
 .textHeader {
@@ -32,4 +31,22 @@
 
 .TableColor {
     background-color: lightgray;
+}
+
+.btn {
+    border-radius: 70px;
+    margin: 1rem 0;
+    white-space: nowrap;
+    
+}
+
+.btn--primary {
+    background: rgb(105, 131, 100);
+    width: 80%;
+    display: inline-block;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
 }
