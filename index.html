@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!-- sprog -->
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <!-- ^reading characters -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,109 +12,135 @@
     <!-- title on webpage -->
     <link rel="stylesheet" href="styles.css" />
     <!-- links to CSS stylesheet-->
-  </head>
+</head>
 
-  <body>
+<body>
+    <!--table data Modal-->
+    <form class="form" style="width: 200px">
+        <fieldset class="TitleColor">
+            <label>Title:<br /></label>
+            <input class="form-title" type="text" title="title" /><br />
+            <label>Task description:<br /></label>
+            <textarea type="task" title="task"></textarea><br />
+            <button id="MiaButton">Submit</button>
+        </fieldset>
+    </form>
     <!-- all html content must be in body - defines the whole code-->
     <h1>DAD Project Management System</h1>
     <section class="container">
-      <!--container defines our costum styles - defined in styles.css-->
-      <table class="TableColor">
-        <tr>
-          <!--table row-->
-          <th><h1 class="TitleColor">Introduction</h1></th>
-          <!--th = table header-->
-        </tr>
-        <tr>
-          <td><h4>TODO</h4></td>
-        </tr>
-        <tr>
-          <td>
-            <!--table data-->
-            <form style="width: 200px">
-              <fieldset class="TitleColor">
-                <label>Title:<br /></label>
-                <input type="text" title="title" /><br />
-                <label>Task description:<br /></label>
-                <textarea type="task" title="task"></textarea><br />
-                <button id="MiaButton">Submit</button>
-              </fieldset>
-            </form>
+        <!--container defines our costum styles - defined in styles.css-->
+        <table class="TableColor">
+            <tr>
+                <!--table row-->
+                <th>
+                    <h1 class="TitleColor">Introduction</h1>
+                </th>
+                <!--th = table header-->
+            </tr>
+            <tr>
+                <td>
+                    <h4>TODO</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <div class="center">
+                        <button onclick="showModal()" class="btn btn--primary add-task">+ Add task</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>In Progress</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <section class="textHeader" style="background: rgb(179, 201, 227)">
+                        <h4 class="textHeader">Writing part</h4>
+                        <h5>Write about equal work distribution</h5>
+                        <div>
+                            <input type="checkbox" id="in_Progress" name="In progress" />
+                            <label for="in_Progress">In Progress</label>
+                            <input type="checkbox" id="done" name="Done" />
+                            <label for="done">Done</label>
+                        </div>
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>Done</h4>
+                </td>
+            </tr>
+        </table>
+
+        <table class="TableColor">
+            <tr>
+                <th>
+                    <h1 class="TitleColor">Problem analysis</h1>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <h4>TODO</h4>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h4>In Progress</h4>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h4>Done</h4>
+                </td>
+            </tr>
+        </table>
+
+        <table class="TableColor">
+            <tr>
+                <th>
+                    <h1 class="TitleColor">Methods</h1>
+                </th>
+            </tr>
+        </table>
+
+        <table class="TableColor">
+            <tr>
+                <th>
+                    <h1 class="TitleColor">Results</h1>
+                </th>
+            </tr>
+        </table>
+
+        <table class="TableColor">
+            <tr>
+                <th>
+                    <h1 class="TitleColor">Discussion</h1>
+                </th>
+            </tr>
+        </table>
+
+        <table class="TableColor">
+            <tr>
+                <th>
+                    <h1 class="TitleColor">Conclusion</h1>
+                </th>
+            </tr>
+        </table>
+
+        <table class="TableColor">
             <div class="center">
-              <button class="btn btn--primary">+ Add task</button>
+                <button class="btn1">+ Add task</button>
             </div>
-          </td>
-        </tr>
-        <tr>
-          <td><h4>In Progress</h4></td>
-        </tr>
-        <tr>
-          <td>
-            <section class="textHeader" style="background: rgb(179, 201, 227)">
-              <h4 class="textHeader">Writing part</h4>
-              <h5>Write about equal work distribution</h5>
-              <div>
-                <input type="checkbox" id="in_Progress" name="In progress" />
-                <label for="in_Progress">In Progress</label>
-                <input type="checkbox" id="done" name="Done" />
-                <label for="done">Done</label>
-              </div>
-            </section>
-          </td>
-        </tr>
-        <tr>
-          <td><h4>Done</h4></td>
-        </tr>
-      </table>
-
-      <table class="TableColor">
-        <tr>
-          <th><h1 class="TitleColor">Problem analysis</h1></th>
-        </tr>
-        <tr>
-          <td><h4>TODO</h4></td>
-        </tr>
-
-        <tr>
-          <td><h4>In Progress</h4></td>
-        </tr>
-
-        <tr>
-          <td><h4>Done</h4></td>
-        </tr>
-      </table>
-
-      <table class="TableColor">
-        <tr>
-          <th><h1 class="TitleColor">Methods</h1></th>
-        </tr>
-      </table>
-
-      <table class="TableColor">
-        <tr>
-          <th><h1 class="TitleColor">Results</h1></th>
-        </tr>
-      </table>
-
-      <table class="TableColor">
-        <tr>
-          <th><h1 class="TitleColor">Discussion</h1></th>
-        </tr>
-      </table>
-
-      <table class="TableColor">
-        <tr>
-          <th><h1 class="TitleColor">Conclusion</h1></th>
-        </tr>
-      </table>
-
-      <table class="TableColor">
-        <div class="center">
-          <button class="btn1">+ Add task</button>
-        </div>
-      </table>
+        </table>
     </section>
-  </body>
-  <script src="script.js"></script>
-  <!--links to javascript-->
+    <!--links to javascript-->
+    <script src="script.js"></script>
+</body>
+
 </html>
