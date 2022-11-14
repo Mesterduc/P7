@@ -39,13 +39,7 @@
     white-space: nowrap;
     
 }
-.btn1 {
-    border-radius: 70px;
-    width : 200px;
-    margin: 1rem 0;
-    white-space: nowrap;
-    background: rgb(105, 131, 100);
-}
+
 .btn--primary {
     background: rgb(105, 131, 100);
     width: 80%;
@@ -88,7 +82,7 @@ fieldset {
     border: none;
     background-color: transparent;
   }
-  /*Colour x when it is pointed at */
+  /* Colour x when it is pointed at */
   .close:hover {
     color: #7b7c7b;
     cursor: pointer;
