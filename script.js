@@ -12,15 +12,24 @@ function showModal() {
 	form.classList.toggle('showModal');
 	// form.classList.add('showModal');
 	let title = form.getElementsByClassName('form-title')[0];
-	// title.innerHTML = 'hello';
 }
 
-function getInputValue(event) {  // A method is used to get input from titel
+function getInputValue(event) {
+	// A method is used to get input from titel
+	event.preventDefault();
+	let value = document.getElementsByClassName('form-title')[0]; //get input from titel box
+	// console.log(value.value);     // Display the value
+	let valuearea = document.getElementsByClassName('task')[0]; //get input from task box
+	// console.log(valuearea.value);     // Display the value
 
-	event.preventDefault()
-	let value = document.getElementsByClassName("form-title")[0]; //get input from titel box
-	console.log(value.value);     // Display the value
-	let valuearea = document.getElementsByClassName("task")[0]; //get input from task box
-	console.log(valuearea.value);     // Display the value
-  }
+	// TODO: Create elements
+	// e.g. document.createElement("section");
 
+	// TODO Insert values to elements
+	// e.g header.innerHTML = value
+
+	// TODO: Append elements
+	// e.g header.append('body')
+
+	// TODO: find table where the created card needs to be and append it
+}
