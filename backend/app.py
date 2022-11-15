@@ -1,13 +1,13 @@
 from flask import Flask, request, Response
 
-# config = {
-#     "DEBUG": True  # run app in debug mode
-# }
+# Download python. mac download python with homebrews
+# Setting flask guide: https://flask.palletsprojects.com/en/2.2.x/installation/
+
+# to start the backend server use the script under in the teminal, be in the right folder:
+# flask --app app --debug run
+# fyi: debug mode reruns the server when making changes
 
 app = Flask(__name__)
-
-# Enable debug mode, so the server will reload on code changes.
-# app.config.from_mapping(config)
 
 sections = [
     {"id": 1, "title": "Introduction", "order": 1},
@@ -41,21 +41,28 @@ def get_sections():
 # Create
 @app.post("/sections")
 def create_section():
-    title = request.args.get('title')
-    sections.append({"id": len(sections) + 1, "title": title,
+    # Gets the title name passed from the frontend
+    section_title = request.args.get('title')
+    # append a new scention to scentions. Give a new id and order number as the last element in the array lengtg
+    sections.append({"id": len(sections) + 1, "title": section_title,
                     "order": len(sections) + 1})
     return sections
 
 
-# Deletes
+# Delete
 @app.delete("/sections")
 def delete_sections():
+    # Gets the id passed from the frontend
     id = request.args.get('id')
+    # loops the sections array
     for section in sections:
+        # If object id ( "id": 1 ) is equal to the id passed from the frontend
+        # Casting id from a string to a int
         if section['id'] == int(id):
-            print("hello")
+            # Removes the object from array
             sections.remove(section)
-    # TODO decrease order number, after deleting the section
+
+    # TODO after deleting the section, decrease order number from the reminding sections
 
     return sections
 
@@ -63,12 +70,12 @@ def delete_sections():
 # Update
 @app.put("/sections")
 def update_sections():
-    # TODO: update title and order
+    # TODO: posible to update title and order
     return "<h1>Sections</h1>"
 
 
 # TASKS
-# Get
+# Get all tasks
 @app.get("/tasks")
 def get_tasks():
     return "<h1>Tasks</h1>"
@@ -82,18 +89,18 @@ def get_task():
 
 
 # Create
-@app.post("/tasks")
+@app.post("/task")
 def create_task():
     return "<h1>Create Task</h1>"
 
 
 # Delete
-@app.delete("/tasks")
-def delete_tasks():
-    return "<h1>Tasks</h1>"
+@app.delete("/task")
+def delete_task():
+    return "<h1>Delete Task</h1>"
 
 
 # Put
 @app.put("/tasks")
-def update_tasks():
-    return "<h1>Tasks</h1>"
+def update_task():
+    return "<h1>Update Task</h1>"
