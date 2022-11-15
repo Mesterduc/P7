@@ -1,24 +1,9 @@
-// let element = document.getElementById('myBtn');
-// element.addEventListener('click', myFunction);
-// function myFunction() {
-// 	alert('Hello World!');
-// }
 
-// let button = document.getElementsByClassName('add-task');
-// button.addEventListener('click', showModal);
-
-function showModal() {
+function showTaskBox() {
 	let form = document.getElementsByClassName('form')[0];
-	form.classList.toggle('showModal');
-	// form.classList.add('showModal');
-	let title = form.getElementsByClassName('form-title')[0];
-// 	let formElement = document.getElementsByClassName('form-title')[0]; //get input from titel box
-// 	// console.log(value.value);     // Display the value
-// 	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box
-// 	// console.log(valuearea.value);     // Display the value
-// 	formElement.innerHTML = "";
-// 	formTextarea.innerHTML = "";
-// }
+	form.classList.toggle('showTaskBox');
+	// form.classList.add('showTaskBox');
+}
 
 function getInputValue(event) {
 	// A method is used to get input from titel
@@ -27,6 +12,10 @@ function getInputValue(event) {
 	// console.log(value.value);     // Display the value
 	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box
 	// console.log(valuearea.value);     // Display the value
+
+
+
+
 
 	//Implement the taskbox (section) from HTLM and define it as taskbox in script
 	let taskbox = document.createElement("section"); //Define the taskbox created in HTML section
@@ -40,14 +29,38 @@ function getInputValue(event) {
 	let h5 = document.createElement("h5"); //Users input in formTextarea (Task describtion) will show on the screen
 	taskbox.append(h5);
 	h5.innerHTML = formTextarea.value;
-} 
 
+	//to make a checkbox window
+	let button = document.createElement ("input");
+	button.type = "checkbox";
+	button.id = "submit";
+	button.value = "Submit";
+	button.className = "btn";
 
+	button.onclick = function () {
+		style.color = "blue";
+	};
+	taskbox.append(button);
 
-	// TODO Insert values to elements
-	// e.g header.innerHTML = value
+	let checkboxInProgress = document.createElement("InProgress");
+	taskbox.append(checkboxInProgress);
+	checkboxInProgress.innerHTML = "In progress";
 
-	// TODO: Append elements
-	// e.g header.append('body')
+	//to make the second checkbox window
+	let button2 = document.createElement ("input");
+	button2.type = "checkbox";
+	button2.id = "submit";
+	button2.value = "Submit";
+	button2.className = "btn";
 
-	// TODO: find table where the created card needs to be and append it
+	button2.onclick = function () {
+		style.color = "blue";
+	};
+	checkboxInProgress.append(button2);
+
+	let checkboxDone = document.createElement("Done");
+	checkboxInProgress.append(checkboxDone);
+	checkboxDone.innerHTML = "Done";
+
+	showTaskBox();
+}
