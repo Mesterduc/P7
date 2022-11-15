@@ -8,13 +8,14 @@ from flask import Flask, request, Response
 # fyi: debug mode reruns the server when making changes
 
 app = Flask(__name__)
-
+# order: what order should the section order be
 sections = [
     {"id": 1, "title": "Introduction", "order": 1},
-    {"id": 2, "title": "Problem analysis", "order": 3},
-    {"id": 3, "title": "Method", "order": 2}
+    {"id": 3, "title": "Method", "order": 3},
+    {"id": 2, "title": "Problem analysis", "order": 2},
 ]
 
+# maybe we don't need section_id
 tasks = [
     {"id": 1, "title": "Task 1", "description": "Description 1",
         "progress": False, "done": False, "section_id": 1},
