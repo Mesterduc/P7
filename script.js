@@ -3,6 +3,8 @@ function showTaskBox() {
 	let form = document.getElementsByClassName('form')[0];
 	form.classList.toggle('showTaskBox');
 	// form.classList.add('showTaskBox');
+	form.reset()
+	
 }
 
 function getInputValue(event) {
@@ -37,9 +39,7 @@ function getInputValue(event) {
 	button.value = "Submit";
 	button.className = "btn";
 
-	button.onclick = function () {
-		style.color = "blue";
-	};
+	
 	taskbox.append(button);
 
 	let checkboxInProgress = document.createElement("InProgress");
@@ -53,14 +53,14 @@ function getInputValue(event) {
 	button2.value = "Submit";
 	button2.className = "btn";
 
-	button2.onclick = function () {
-		style.color = "blue";
-	};
+	
 	checkboxInProgress.append(button2);
 
 	let checkboxDone = document.createElement("Done");
 	checkboxInProgress.append(checkboxDone);
 	checkboxDone.innerHTML = "Done";
-
+	
+	
 	showTaskBox();
+	
 }
