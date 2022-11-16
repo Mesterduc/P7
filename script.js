@@ -79,7 +79,7 @@ function getCategoryValue(event) {
 	categorybox.classList.add("id", "mySection");
     document.body.append(categorybox);
 
-	let h4 = document.createElement("nput"); //Users input in formElement (title) will show on the screen 
+	let h4 = document.createElement("h4"); //Users input in formElement (title) will show on the screen 
 	categorybox.append(h4);
 	h4.innerHTML = formElement.value;
 	showTaskCategory()
