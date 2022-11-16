@@ -46,6 +46,19 @@
     display: inline-block;
 }
 
+.btn-category {
+    font-size: 17px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 150px;
+}
+
+.category-container {
+    padding: 30px;
+    width: 200px;
+    background-color: lightgray;
+}
+
 .center{
     display: flex;
     justify-content: center;
