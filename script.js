@@ -67,25 +67,47 @@ function getCategoryValue(event) {
 	event.preventDefault();
 
 	// find form element
-
 	// take the form input value
+	let categoryForm = document.getElementsByClassName('category-form')[0];
 
+	let categoryText = categoryForm.getElementsByClassName('form-title')[0].value;
+	
+	let containerForm = document.getElementsByClassName('container')[0];
+	
 	// create table, with todo, progress and done
+	let table = document.createElement('table'); //Define the taskbox created in HTML section
+	table.classList.add('TableColor');
+	containerForm.append(table);
 
-	// append elements to each other
+	let tr = document.createElement('tr');
+	let th = document.createElement('th');
+	let h1 = document.createElement('h1');
 
-	// insert form input value to table header
+	h1.classList.add('TitleColor'); //h1 gets TitleColor styling
 
-	// appen the table to the html
+	h1.innerHTML = categoryText;
+	table.append(tr);
+	tr.append(th);
+	th.append(h1);
 
-	let formCategory = document.getElementsByClassName('form-title')[0];
 
-	let categorybox = document.createElement('section'); //Define the taskbox created in HTML section
-	categorybox.classList.add('id', 'mySection');
-	document.body.append(categorybox);
+	let subTitle = ["TODO", "IN PROGRESS", "DONE"];
 
-	let h4 = document.createElement('h4'); //Users input in formElement (title) will show on the screen
-	categorybox.append(h4);
-	h4.innerHTML = formElement.value;
+	for (let i = 0; i < subTitle.length; i++) {
+		table.append(createTableRow(subTitle[i]));
+	}
+
 	showTaskCategory();
+}
+
+function createTableRow(title) {
+	let tr = document.createElement('tr');
+	let td = document.createElement('td');
+	let h4 = document.createElement('h4');
+
+	h4.innerHTML = title;
+	tr.append(td);
+	td.append(h4);
+
+	return tr;
 }
