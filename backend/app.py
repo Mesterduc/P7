@@ -1,4 +1,4 @@
-from flask import Flask, request, Response
+from flask import Flask, request, Response, jsonify
 
 # Download python. mac download python with homebrews
 # Setting flask guide: https://flask.palletsprojects.com/en/2.2.x/installation/
@@ -36,6 +36,7 @@ tasks = [
 # Get
 @app.get("/sections")
 def get_sections():
+    # Converts the list to json automaticly and returns the json to the clint
     return sections
 
 
