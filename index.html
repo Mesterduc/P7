@@ -29,7 +29,7 @@
     </form>
     <!-- all html content must be in body - defines the whole code-->
     <h1>DAD Project Management System</h1>
-    <section class="center">
+    <section class="AddCategory">
       <section class="container">
         <!--container defines our costum styles - defined in styles.css-->
         <table class="TableColor">
@@ -136,16 +136,11 @@
           </tr>
         </table>
       </section>
-      <table class="TableColor">
-        <div class="center category-container">
-          <button
-            onclick="showTaskCategory()"
-            class="btn--primary btn-category"
-          >
-            + Add category
-          </button>
-        </div>
-      </table>
+      <div class="center category-container">
+        <button onclick="showTaskCategory()" class="btn--primary btn-category">
+          + Add category
+        </button>
+      </div>
     </section>
     <form class="form category-form" style="width: 200px">
       <!--Implementing the remove (x) bottom-->

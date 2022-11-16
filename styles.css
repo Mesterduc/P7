@@ -60,6 +60,10 @@
     height: 35px;
 }
 
+.AddCategory{
+    display: flex;
+}
+
 .form {
     display: none;
 }

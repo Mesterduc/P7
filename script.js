@@ -72,7 +72,7 @@ function getCategoryValue(event) {
 	let categoryText = categoryForm.getElementsByClassName('form-title')[0].value;
 	
 	let containerForm = document.getElementsByClassName('container')[0];
-	containerForm.append(table);
+	
 
 
 	// create table for the category
@@ -80,7 +80,7 @@ function getCategoryValue(event) {
 	table.classList.add('TableColor');
 	
 	// append the table to the html
-	document.body.append(table);
+	containerForm.append(table);
 	let tr = document.createElement('tr');
 	let th = document.createElement('th');
 	let h1 = document.createElement('h1');
