@@ -46,8 +46,13 @@
     display: inline-block;
 }
 
+.btn--primary:hover {
+    color: #3c3d3c;
+    cursor: pointer;
+  }
+
 .btn-category {
-    font-size: 17px;
+    font-size: 16px;
     border-radius: 10px;
     padding: 5px;
     width: 150px;
