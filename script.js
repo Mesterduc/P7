@@ -69,29 +69,33 @@ function getCategoryValue(event) {
 	// find form element
 	// take the form input value
 	let categoryForm = document.getElementsByClassName('category-form')[0];
-
 	let categoryText = categoryForm.getElementsByClassName('form-title')[0].value;
 	
 	let containerForm = document.getElementsByClassName('container')[0];
-	
-	// create table, with todo, progress and done
-	let table = document.createElement('table'); //Define the taskbox created in HTML section
-	table.classList.add('TableColor');
 	containerForm.append(table);
 
+
+	// create table for the category
+	let table = document.createElement('table');
+	table.classList.add('TableColor');
+	
+	// append the table to the html
+	document.body.append(table);
 	let tr = document.createElement('tr');
 	let th = document.createElement('th');
 	let h1 = document.createElement('h1');
 
 	h1.classList.add('TitleColor'); //h1 gets TitleColor styling
-
+	
+	// insert form input value to table header
 	h1.innerHTML = categoryText;
+
+	// append elements to each other
 	table.append(tr);
 	tr.append(th);
 	th.append(h1);
 
-
-	let subTitle = ["TODO", "IN PROGRESS", "DONE"];
+	let subTitle = ["Todo", "In progress", "Done"]
 
 	for (let i = 0; i < subTitle.length; i++) {
 		table.append(createTableRow(subTitle[i]));
@@ -100,14 +104,31 @@ function getCategoryValue(event) {
 	showTaskCategory();
 }
 
+// create with todo, progress and done
 function createTableRow(title) {
-	let tr = document.createElement('tr');
-	let td = document.createElement('td');
-	let h4 = document.createElement('h4');
+let tr = document.createElement('tr');
+let td = document.createElement('td');
+let h4 = document.createElement('h4');
 
-	h4.innerHTML = title;
-	tr.append(td);
-	td.append(h4);
+h4.innerHTML = title;
+tr.append(td);
+td.append(h4);
 
-	return tr;
+return tr; //returning the tr scope 
+
+
 }
+
+	
+
+// 	let h4 = document.createElement('table'); //Users input in formElement (title) will show on the screen
+// 	categoryBox.append(h4);
+// 	h4.innerHTML = formCategory.value;
+// 	showTaskCategory();
+// }
+
+// let formInput = formCategory.querySelector('form-title');
+
+// 	let categoryBox = document.createElement('form'); //Define the taskbox created in HTML section
+// 	categoryBox.classList.add('id', 'mySection');
+// 	document.body.append(categoryBox);
