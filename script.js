@@ -1,15 +1,12 @@
 let chosenSection;
 
 function showTaskBox(event) {
-	// event.path is the section we push the button
-	if(event) {
-		// console.log(event.path)
-		chosenSection = event.path[2]
+	if (event) {
+		chosenSection = event.target.closest('.TableColor');
 	}
 	let form = document.getElementsByClassName('form')[0];
 	form.classList.toggle('showTaskBox');
 	form.reset();
-	
 }
 
 function getInputValue(event) {
@@ -22,7 +19,7 @@ function getInputValue(event) {
 
 	let todo = document.getElementsByClassName('toDo')[0];
 	let todo2 = chosenSection.getElementsByClassName('toDo')[0];
-	console.log(todo2)
+	console.log(todo2);
 
 	//Implement the taskbox (section) from HTLM and define it as taskbox in script
 	let taskbox = document.createElement('section'); //Define the taskbox created in HTML section
@@ -45,7 +42,6 @@ function getInputValue(event) {
 	button.id = 'submit';
 	button.value = 'Submit';
 	button.className = 'btn';
-
 
 	taskbox.append(button);
 
@@ -73,7 +69,6 @@ function showTaskCategory() {
 	let form = document.getElementsByClassName('category-form')[0];
 	form.classList.toggle('showCategoryBox');
 	form.reset();
-	
 }
 
 function getCategoryValue(event) {
@@ -84,37 +79,36 @@ function getCategoryValue(event) {
 	// take the form input value
 	let categoryForm = document.getElementsByClassName('category-form')[0];
 	let categoryText = categoryForm.getElementsByClassName('form-title')[0].value;
-	
+
 	let containerForm = document.getElementsByClassName('container')[0];
-	
+
 	// create table for the category
 	let section = document.createElement('section');
 	section.classList.add('TableColor', 'categoryBorders');
-	
+
 	// append the table to the html
 	containerForm.append(section);
 	let h1 = document.createElement('h1');
 	let h4 = document.createElement('h4');
 
 	h1.classList.add('TitleColor'); //h1 gets TitleColor styling
-	
+
 	// insert form input value to table header
 	h1.innerHTML = categoryText;
 
 	// append elements to each other
 	section.append(h1);
 	section.append(h4);
-	
-	let subTitle = ["TODO", "IN PROGRESS", "DONE"]
+
+	let subTitle = ['TODO', 'IN PROGRESS', 'DONE'];
 
 	for (let i = 0; i < subTitle.length; i++) {
-		let row = createTableRow(subTitle[i])
+		let row = createTableRow(subTitle[i]);
 		section.append(row);
 
-		if (subTitle[i] === "TODO"){
+		if (subTitle[i] === 'TODO') {
 			let button = createTaskButton();
-			row.parentNode.insertBefore(button, row.nextSibling)
-			
+			row.parentNode.insertBefore(button, row.nextSibling);
 		}
 	}
 
@@ -123,16 +117,16 @@ function getCategoryValue(event) {
 
 // create with todo, progress and done
 function createTableRow(title) {
-let section = document.createElement('section')
-let h4 = document.createElement('h4');
+	let section = document.createElement('section');
+	let h4 = document.createElement('h4');
 
-h4.innerHTML = title;
-section.append(h4);
+	h4.innerHTML = title;
+	section.append(h4);
 
-return section; //returning the tr scope 
+	return section; //returning the tr scope
 }
 
-function createTaskButton(){
+function createTaskButton() {
 	let section = document.createElement('section');
 	let h1 = document.createElement('h1');
 	let h4 = document.createElement('h4');
@@ -142,11 +136,11 @@ function createTaskButton(){
 	div.classList.add('center');
 	button.classList.add('btn', 'btn--primary', 'add-task');
 
-	button.innerHTML = "+ Add task";
+	button.innerHTML = '+ Add task';
 	section.append(h1);
 	h1.append(h4);
 	h4.append(div);
 	div.append(button);
-	
+
 	return section;
 }
