@@ -18,7 +18,7 @@ function getInputValue(event) {
 	// stops the default funtionality when clicking on the button
 	event.preventDefault();
 	let formElement = document.getElementsByClassName('form-title')[0]; //get input from titel box
-	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box   // Display the value
+	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box  
 
 	//Implement the taskbox (section) from HTLM and define it as taskbox in script
 	let taskbox = document.createElement('section'); // Create the container for taskbox, created in HTML section
@@ -39,43 +39,17 @@ function getInputValue(event) {
 	// Sets the h5 value
 	h5.innerHTML = formTextarea.value;
 
-	// Task Buttons ----------------------------------------
-
-	// In progress button
-	//to make a checkbox window
-	let button = document.createElement('input');
-	button.type = 'checkbox';
-	button.value = 'Submit';
-	button.className = 'btn';
-
-	taskbox.append(button);
-
-	let checkboxInProgress = document.createElement('InProgress');
-	taskbox.append(checkboxInProgress);
-	checkboxInProgress.innerHTML = 'In progress';
-
-	// Done button
-	//to make the second checkbox window
-	let button2 = document.createElement('input');
-	button2.type = 'checkbox';
-	button2.value = 'Submit';
-	button2.className = 'btn';
-
-	checkboxInProgress.append(button2);
-
-	let checkboxDone = document.createElement('Done');
-	checkboxInProgress.append(checkboxDone);
-	checkboxDone.innerHTML = 'Done';
-
+	taskbox.append(dropdown());
+	
 	// Append the task to the right section
 	let todo = chosenSection.getElementsByClassName('toDo')[0]; // finds where we need to put the task box
 	todo.append(taskbox); // Append the task to the todo section
 
-	// closes the modal and restes the form
+	// closes the taskbox and restes the form
 	showTaskBox();
 }
 
-// Open and closing the category modal
+// Open and closing the category box ('add category')
 function showTaskCategory() {
 	let form = document.getElementsByClassName('category-form')[0];
 	form.classList.toggle('showCategoryBox');
@@ -131,6 +105,24 @@ function getCategoryValue(event) {
 	}
 
 	showTaskCategory();
+}
+
+//to make a dropdown box with 3 options to choose
+function dropdown(){
+	let subTitle = ['TODO', 'IN PROGRESS', 'DONE'];
+
+	let select = document.createElement('select');
+	select.name = 'choices';
+	select.id = 'choices';
+
+	for (const val of subTitle)
+    {
+        let option = document.createElement("option");
+        option.value = val;
+		option.text = val;
+        select.appendChild(option);
+	}
+	return select;
 }
 
 // Create todo, progress and done
