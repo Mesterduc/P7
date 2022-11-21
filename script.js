@@ -1,30 +1,31 @@
 let chosenSection;
 
+// open, closing and restet the task modal
 function showTaskBox(event) {
+	// event shows where we click the button
 	if (event) {
+		// finds parent with class of .TableColor
 		chosenSection = event.target.closest('.TableColor');
 	}
 	let form = document.getElementsByClassName('form')[0];
+	// toggle the class for the elements
 	form.classList.toggle('showTaskBox');
 	form.reset();
 }
 
+// Create new task, with the value we from the modal
 function getInputValue(event) {
-	// A method is used to get input from titel
+	// stops the default funtionality when clicking on the button
 	event.preventDefault();
 	let formElement = document.getElementsByClassName('form-title')[0]; //get input from titel box
-	// console.log(value.value);     // Display the value
-	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box
-	// console.log(valuearea.value);     // Display the value
+	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box   // Display the value
 
-	let todo = document.getElementsByClassName('toDo')[0];
-	let todo2 = chosenSection.getElementsByClassName('toDo')[0];
-	console.log(todo2);
+	let todo = chosenSection.getElementsByClassName('toDo')[0];
 
 	//Implement the taskbox (section) from HTLM and define it as taskbox in script
 	let taskbox = document.createElement('section'); //Define the taskbox created in HTML section
 	taskbox.classList.add('id', 'mySection');
-	todo2.append(taskbox);
+	todo.append(taskbox);
 	taskbox.classList.add('Box');
 
 	let h4 = document.createElement('h4'); //Users input in formElement (title) will show on the screen
