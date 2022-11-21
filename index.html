@@ -17,7 +17,9 @@
     <!--table data Modal-->
     <form class="form" style="width: 200px">
       <!--Implementing the remove (x) bottom-->
-      <span onclick="showTaskBox()" class="close" title="Close Modal">×</span>
+      <span onclick="showTaskBox(event)" class="close" title="Close Modal"
+        >×</span
+      >
 
       <fieldset class="TitleColor">
         <label>Title:<br /></label>
@@ -32,133 +34,62 @@
     <section class="AddCategory">
       <section class="container">
         <!--container defines our costum styles - defined in styles.css-->
-        <table class="TableColor">
-          <tr>
-            <!--table row-->
-            <th>
-              <h1 class="TitleColor">Introduction</h1>
-            </th>
-            <!--th = table header-->
-          </tr>
-          <tr>
-            <td>
-              <h4 class="toDo">TODO</h4>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="center">
-                <button
-                  onclick="showTaskBox()"
-                  class="btn btn--primary add-task"
-                >
-                  + Add task
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h4>IN PROGRESS</h4>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <section
-                class="textHeader"
-                style="background: rgb(179, 201, 227)"
-              >
-                <h4 class="textHeader">Writing part</h4>
-                <h5>Write about equal work distribution</h5>
-                <div>
-                  <input type="checkbox" id="in_Progress" name="In progress" />
-                  <label for="in_Progress">In Progress</label>
-                  <input type="checkbox" id="done" name="Done" />
-                  <label for="done">Done</label>
-                </div>
-              </section>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h4>DONE</h4>
-            </td>
-          </tr>
-        </table>
+        <section class="TableColor categoryBorders">
+          <h1 class="TitleColor">Introduction</h1>
+          <h4 class="toDo">TODO</h4>
+          <div class="center">
+            <button
+              onclick="showTaskBox(event)"
+              class="btn btn--primary add-task"
+            >
+              + Add task
+            </button>
+          </div>
+          <h4>IN PROGRESS</h4>
+          <!-- <section class="textHeader" style="background: rgb(179, 201, 227)">
+            <h4 class="textHeader">Writing part</h4>
+            <h5>Write about equal work distribution</h5>
+            <div>
+              <input type="checkbox" id="in_Progress" name="In progress" />
+              <label for="in_Progress">In Progress</label>
+              <input type="checkbox" id="done" name="Done" />
+              <label for="done">Done</label>
+            </div>
+          </section> -->
+          <h4>DONE</h4>
+        </section>
 
-        <table class="TableColor">
-          <tr>
-            <th>
-              <h1 class="TitleColor">Problem analysis</h1>
-            </th>
-          </tr>
-          <tr>
-            <td>
-              <h4>TODO</h4>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="center">
-                <button
-                  onclick="showTaskBox()"
-                  class="btn btn--primary add-task"
-                >
-                  + Add task
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h4>IN PROGRESS</h4>
-            </td>
-          </tr>
+        <section class="TableColor categoryBorders">
+          <h1 class="TitleColor">Problem analysis</h1>
+          <h4 class="toDo">TODO</h4>
+          <div class="center">
+            <button
+              onclick="showTaskBox(event)"
+              class="btn btn--primary add-task"
+            >
+              + Add task
+            </button>
+          </div>
+          <h4>IN PROGRESS</h4>
+          <h4>DONE</h4>
+        </section>
 
-          <tr>
-            <td>
-              <h4>DONE</h4>
-            </td>
-          </tr>
-        </table>
-
-        <table class="TableColor">
-          <tr>
-            <th>
-              <h1 class="TitleColor">Methods</h1>
-            </th>
-          </tr>
-          <tr>
-            <td>
-              <h4>TODO</h4>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="center">
-                <button
-                  onclick="showTaskBox()"
-                  class="btn btn--primary add-task"
-                >
-                  + Add task
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h4>IN PROGRESS</h4>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <h4>DONE</h4>
-            </td>
-          </tr>
-        </table>
+        <section class="TableColor categoryBorders">
+          <h1 class="TitleColor">Methods</h1>
+          <h4 class="toDo">TODO</h4>
+          <div class="center">
+            <button
+              onclick="showTaskBox(event)"
+              class="btn btn--primary add-task"
+            >
+              + Add task
+            </button>
+          </div>
+          <h4>IN PROGRESS</h4>
+          <h4>DONE</h4>
+        </section>
       </section>
-      <div class="center category-container">
+      <div class="center category-container categoryBorders">
         <button onclick="showTaskCategory()" class="btn--primary btn-category">
           + Add category
         </button>

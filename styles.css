@@ -1,5 +1,5 @@
-.container{
-    display: flex; 
+.container {
+    display: flex;
     align-items: flex-start;
 }
 
@@ -14,19 +14,23 @@
 }
 
 .TitleColor {
-    background-color:darkgray;
+    background-color: darkgray;
     width: 200px;
     padding: 10px;
+    font-size: larger;
 }
 
 .TableColor {
     background-color: lightgray;
+
+
+
 }
 
 .btn {
     border-radius: 70px;
     white-space: nowrap;
-    
+
 }
 
 .btn--primary {
@@ -38,7 +42,7 @@
 .btn--primary:hover {
     color: #3c3d3c;
     cursor: pointer;
-  }
+}
 
 .btn-category {
     font-size: 16.5px;
@@ -54,13 +58,13 @@
     background-color: lightgray;
 }
 
-.center{
+.center {
     display: flex;
     justify-content: center;
     height: 35px;
 }
 
-.AddCategory{
+.AddCategory {
     display: flex;
 }
 
@@ -92,7 +96,7 @@ fieldset {
     margin-inline-start: 0px;
 }
 
-  /* Styling the closing x, its position and colour */
+/* Styling the closing x, its position and colour */
 .close {
     position: absolute;
     top: -25%;
@@ -102,9 +106,22 @@ fieldset {
     color: #070000;
     border: none;
     background-color: transparent;
-  }
-  /* Colour x when it is pointed at */
-  .close:hover {
+}
+
+/* Colour x when it is pointed at */
+.close:hover {
     color: #7b7c7b;
     cursor: pointer;
-  }
+}
+
+.Box {
+    display: block;
+    border: 1px solid black;
+    background-color: rgb(162, 187, 243);
+
+}
+
+.categoryBorders {
+    border-radius: 10px;
+    margin-right: 5px;
+}
