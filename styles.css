@@ -5,6 +5,7 @@
 
 .textHeader {
     border: 1px solid black;
+   
 }
 
 .alignbutton {
@@ -18,6 +19,8 @@
     width: 200px;
     padding: 10px;
     font-size: larger;
+    text-align: center;
+   
 }
 
 .TableColor {
@@ -117,11 +120,27 @@ fieldset {
 .Box {
     display: block;
     border: 1px solid black;
-    background-color: rgb(162, 187, 243);
-
+    background-color: rgb(209, 222, 251); 
+    width: 200px;
+    padding: 10px;
+    
 }
-
+.BoxForTitle {
+    display: block;
+    border: 1px solid black;
+    background-color: rgb(209, 222, 251); 
+    width: 200px;
+    padding: 10px;
+    border-block-start: none;
+    border-inline: none;
+    margin-block-start: auto;
+    padding-inline: initial;
+}
 .categoryBorders {
     border-radius: 10px;
     margin-right: 5px;
+}
+
+.subTitle {
+    padding: 5px;
 }

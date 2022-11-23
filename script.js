@@ -3,6 +3,7 @@ let chosenSection;
 // open, closing and restet the task modal
 function showTaskBox(event) {
 	// event shows where we click the button
+	console.log(event)
 	if (event) {
 		// finds parent with class of .TableColor
 		chosenSection = event.target.closest('.TableColor');
@@ -24,6 +25,7 @@ function getInputValue(event) {
 	let taskbox = document.createElement('section'); // Create the container for taskbox, created in HTML section
 	taskbox.classList.add('id', 'mySection'); // Class for section
 	taskbox.classList.add('Box');
+	
 
 	// Task Header ----------------------------------------
 	// task title
@@ -31,7 +33,7 @@ function getInputValue(event) {
 	taskbox.append(h4);
 	// Sets the h4 value
 	h4.innerHTML = formElement.value;
-	h4.classList.add('Box');
+	h4.classList.add('BoxForTitle');
 
 	// task description
 	let h5 = document.createElement('h5'); //Users input in formTextarea (Task describtion) will show on the screen
@@ -54,7 +56,11 @@ function showTaskCategory() {
 	let form = document.getElementsByClassName('category-form')[0];
 	form.classList.toggle('showCategoryBox');
 	form.reset();
+
 }
+
+
+
 
 // Create category section
 function getCategoryValue(event) {
@@ -70,29 +76,34 @@ function getCategoryValue(event) {
 
 	// create table for the category
 	let section = document.createElement('section');
-	section.classList.add('TableColor', 'categoryBorders');
+	section.classList.add('TableColor', 'categoryBorders' , 'subTitle');
 
 	// append the table to the html
 	containerForm.append(section);
 	let h1 = document.createElement('h1');
-	let h4 = document.createElement('h4');
+	
 
 	h1.classList.add('TitleColor'); //h1 gets TitleColor styling
+	
+	
 
 	// insert form input value to table header
 	h1.innerHTML = categoryText;
+	
+	
 
 	// append elements to each other
 	section.append(h1);
-	section.append(h4);
+
 
 	// array of category we want as default
 	let subTitle = ['TODO', 'IN PROGRESS', 'DONE'];
+   
 
 	for (let i = 0; i < subTitle.length; i++) {
 		let row = createTableRow(subTitle[i]);
 		section.append(row);
-
+		
 		// If the the element in the subTitle array is equel 'TODO' it creates the button to add task for the section
 		if (subTitle[i] === 'TODO') {
 			// Creates the button
@@ -104,10 +115,12 @@ function getCategoryValue(event) {
 		}
 	}
 
-	showTaskCategory();
+	showTaskCategory(event);
+	
+	
 }
 
-//to make a dropdown box with 3 options to choose
+//to make a dropdown box with 3 options to choose between
 function dropdown(){
 	let subTitle = ['TODO', 'IN PROGRESS', 'DONE'];
 
@@ -115,7 +128,7 @@ function dropdown(){
 	select.name = 'choices';
 	select.id = 'choices';
 
-	for (const val of subTitle)
+	for (const val of subTitle) //loop between 'TODO', 'IN PROGRESS' and 'DONE'
     {
         let option = document.createElement("option");
         option.value = val;
@@ -129,6 +142,7 @@ function dropdown(){
 function createTableRow(title) {
 	let section = document.createElement('section');
 	let h4 = document.createElement('h4');
+	h4.classList.add('toDo')
 
 	h4.innerHTML = title;
 	section.append(h4);
@@ -138,6 +152,7 @@ function createTableRow(title) {
 
 // Create task button
 function createTaskButton() {
+	
 	// Create html elements
 	let section = document.createElement('section');
 	let h1 = document.createElement('h1');
@@ -151,6 +166,10 @@ function createTaskButton() {
 
 	// Add value to button
 	button.innerHTML = '+ Add task';
+	button.addEventListener("click", function(event){
+		showTaskBox(event)}
+	);
+	
 
 	// Appends the elements to each other
 	section.append(h1);
@@ -160,4 +179,5 @@ function createTaskButton() {
 
 	// Returns the button
 	return section;
+	
 }
