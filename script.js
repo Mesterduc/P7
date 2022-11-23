@@ -44,7 +44,7 @@ function getInputValue(event) {
 	taskbox.append(dropdown());
 	
 	// Append the task to the right section
-	let todo = chosenSection.getElementsByClassName('toDo')[0]; // finds where we need to put the task box
+	let todo = chosenSection.getElementsByClassName('todo')[0]; // finds where we need to put the task box
 	todo.append(taskbox); // Append the task to the todo section
 
 	// closes the taskbox and restes the form
@@ -116,8 +116,25 @@ function getCategoryValue(event) {
 	}
 
 	showTaskCategory(event);
-	
-	
+}
+
+//to move task box around
+function moveTaskBox(event){
+
+const copy = event.target.closest('.Box');
+const parent = event.target.closest('.TableColor');
+if (event.target.value === 'IN PROGRESS'){
+	let inProgress = parent.getElementsByClassName('IN-PROGRESS')[0]
+	inProgress.append(copy);
+}
+if (event.target.value === 'DONE'){
+	let done = parent.getElementsByClassName('done')[0]
+	done.append(copy);
+}
+if (event.target.value === 'TODO'){
+	let todo = parent.getElementsByClassName('todo')[0]
+	todo.append(copy);
+}
 }
 
 //to make a dropdown box with 3 options to choose between
@@ -135,19 +152,31 @@ function dropdown(){
 		option.text = val;
         select.appendChild(option);
 	}
+
+	select.addEventListener('change', (event)=> {moveTaskBox(event)})
 	return select;
+	
 }
 
 // Create todo, progress and done
 function createTableRow(title) {
 	let section = document.createElement('section');
 	let h4 = document.createElement('h4');
-	h4.classList.add('toDo')
+	if(title === 'TODO'){
+		h4.classList.add('todo')
+	}
+	if(title === 'IN PROGRESS'){
+		h4.classList.add('IN-PROGRESS')
+	}
+	if(title === 'DONE'){
+		h4.classList.add('done')
+	}
+	
 
 	h4.innerHTML = title;
 	section.append(h4);
 
-	return section; //returning the tr scope
+	return section; 
 }
 
 // Create task button
