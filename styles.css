@@ -5,7 +5,19 @@
     padding: 10px;
     font-size: larger;
     text-align: center;
+}
+
+.createAddMember{
+    display: none;
    
+}
+
+.goodbye{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: solid black;
 }
 
 .container {

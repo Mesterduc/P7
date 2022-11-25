@@ -26,7 +26,7 @@ function getNameInput(event) {
   h5.innerHTML = formTextarea.value;
 }
 
-function createAddMember() {
+function createAddMember(event) {
   let member = document.getElementsByClassName("memberInput")[0];
 
   let memberInput = document.createElement("Input");
@@ -35,6 +35,9 @@ function createAddMember() {
 
   let name = document.getElementsByClassName("names");
   memberInput.placeholder = "Member "+name.length;
+  memberInput.maxLength="4";
+
+  
 }
 
 function addMember() {
@@ -46,6 +49,11 @@ function addMember() {
       users.push(name[i].value);
     }
   }
+
+  let bye = document.getElementsByClassName("goodbye")[0];
+
+  bye.classList.toggle("createAddMember");
+  bye.reset();
 }
 
 // open, closing and restet the task modal
