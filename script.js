@@ -26,6 +26,17 @@ function getNameInput(event) {
   h5.innerHTML = formTextarea.value;
 }
 
+function createAddMember() {
+  let member = document.getElementsByClassName("memberInput")[0];
+
+  let memberInput = document.createElement("Input");
+  memberInput.classList.add("names");
+  member.append(memberInput);
+
+  let name = document.getElementsByClassName("names");
+  memberInput.placeholder = "Member "+name.length;
+}
+
 function addMember() {
   let name = document.getElementsByClassName("names");
   //to set names into checkbox

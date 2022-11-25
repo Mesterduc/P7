@@ -36,32 +36,34 @@
     <section>
       <fieldset class="memberBox">
         <label>Write initials of all group members:<br /></label>
-        <input
-          class="form-title names"
-          type="text"
-          title="title"
-          placeholder="Member 1"
-        /><br />
+        <section class="memberInput">
+          <input
+            class="form-title names"
+            type="text"
+            title="title"
+            placeholder="Member 1"
+          /><br />
 
-        <input
-          class="form-title names"
-          type="text"
-          title="title"
-          placeholder="Member 2"
-        /><br />
-        <input
-          class="form-title names"
-          type="text"
-          title="title"
-          placeholder="Member 3"
-        /><br />
-        <input
-          class="form-title names"
-          type="text"
-          title="title"
-          placeholder="Member 4"
-        /><br />
-        <button onclick="showTaskBox(event)" class="btn btn--primary">
+          <input
+            class="form-title names"
+            type="text"
+            title="title"
+            placeholder="Member 2"
+          /><br />
+          <input
+            class="form-title names"
+            type="text"
+            title="title"
+            placeholder="Member 3"
+          /><br />
+          <input
+            class="form-title names"
+            type="text"
+            title="title"
+            placeholder="Member 4"
+          /><br />
+        </section>
+        <button onclick="createAddMember()" class="btn btn--primary">
           + Add a member
         </button>
         <button onclick="addMember()">Submit</button>
