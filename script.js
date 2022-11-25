@@ -50,7 +50,7 @@ function addMember() {
     }
   }
 
-  let bye = document.getElementsByClassName("goodbye")[0];
+  let bye = document.getElementsByClassName("boxInBox")[0];
 
   bye.classList.toggle("createAddMember");
   bye.reset();
