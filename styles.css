@@ -144,3 +144,17 @@ fieldset {
 .subTitle {
     padding: 5px;
 }
+
+.checkBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: x-small;
+}
+
+
+.checkBoxContainer{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
