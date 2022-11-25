@@ -1,5 +1,41 @@
 let chosenSection;
-let users = ["user1", "user2", "user3", "user4", "user5", "user6"];
+let users = [];
+
+//to get the initials from users
+function getNameInput(event) {
+  let formElement = document.getElementsByClassName("form-title")[0]; //get input from titel box
+  let formTextarea = document.getElementsByClassName("task")[0]; //get input from task box
+
+  //Implement the taskbox (section) from HTLM and define it as taskbox in script
+  let taskbox = document.createElement("section"); // Create the container for taskbox, created in HTML section
+  taskbox.classList.add("id", "mySection"); // Class for section
+  taskbox.classList.add("Box");
+
+  // Task Header ----------------------------------------
+  // task title
+  let h4 = document.createElement("h4"); //Users input in formElement (title) will show on the screen
+  taskbox.append(h4);
+  // Sets the h4 value
+  h4.innerHTML = "Write the all group members' initials";
+  h4.classList.add("BoxForTitle");
+
+  // task description
+  let h5 = document.createElement("h5"); //Users input in formTextarea (Task describtion) will show on the screen
+  taskbox.append(h5);
+  // Sets the h5 value
+  h5.innerHTML = formTextarea.value;
+}
+
+function addMember() {
+  let name = document.getElementsByClassName("names");
+  //to set names into checkbox
+  for (let i = 0; i < name.length; i++) {
+    // const element = array[i];
+    if (name[i].value != "") {
+      users.push(name[i].value);
+    }
+  }
+}
 
 // open, closing and restet the task modal
 function showTaskBox(event) {
@@ -57,7 +93,7 @@ function getInputValue(event) {
     checkBoxContainer.append(checkBox);
     checkBox.append(button);
     checkBox.append(span);
-    span.innerHTML = "N1";
+    span.innerHTML = users[i];
     const element = users[i];
     taskbox.append(checkBoxContainer);
   }
@@ -186,12 +222,6 @@ function createTableRow(title) {
   return section;
 }
 
-// function createCheckbox{
-// 	const btn = document.querySelector('#btn');
-// btn.addEventListener('click', (event) => {
-//    // ...
-// });
-// }
 // Create task button
 function createTaskButton() {
   // Create html elements
