@@ -3,7 +3,7 @@ let users = [];
 
 //to get the initials from users
 function getNameInput(event) {
-	let formElement = document.getElementsByClassName('form-title')[0]; //get input from titel box
+	//get input from titel box
 	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box
 
 	//Implement the taskbox (section) from HTLM and define it as taskbox in script
@@ -57,7 +57,6 @@ function addMember() {
 // open, closing and restet the task modal
 function showTaskBox(event) {
 	// event shows where we click the button
-	console.log(event);
 	if (event) {
 		// finds parent with class of .TableColor
 		chosenSection = event.target.closest('.TableColor');
@@ -111,7 +110,6 @@ function getInputValue(event) {
 		checkBox.append(button);
 		checkBox.append(span);
 		span.innerHTML = users[i];
-		const element = users[i];
 		taskbox.append(checkBoxContainer);
 	}
 
