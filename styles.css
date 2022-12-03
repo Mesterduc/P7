@@ -127,14 +127,31 @@ sections for styling the page:
     background-color: lightgray;
     border-radius: 10px;
     margin-right: 5px;
-    padding: 5px;
+    padding: 10px;
 }
+.categoryTitle__container {
+    position: relative;
+}
+
+.deleteCategory {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+.deleteCategory:hover {
+    cursor: pointer;
+    color: red;
+}
+
 .categoryTitle {
     background-color: darkgray;
     width: 200px;
     padding: 10px;
     font-size: larger;
     text-align: center;
+    margin: 0px;
 }
 
 .categoryButton__container {

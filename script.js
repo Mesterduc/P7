@@ -187,12 +187,22 @@ function createCategory(event) {
 	// append the table to the html
 	containerForm.append(section);
 
+	// create the header for the category
+	let titleSection = document.createElement('section');
+	titleSection.classList.add('categoryTitle__container');
+	let deleteButton = document.createElement('span');
+	deleteButton.classList.add('deleteCategory');
+	deleteButton.innerHTML = 'x';
+	deleteButton.addEventListener('click', (event) => deleteCategory(event));
+
 	let h1 = document.createElement('h1');
 	h1.classList.add('categoryTitle'); //h1 gets categoryTitle styling
 	h1.innerHTML = categoryText; // insert form input value to table header
 
 	// append elements to each other
-	section.append(h1);
+	titleSection.append(h1);
+	titleSection.append(deleteButton);
+	section.append(titleSection);
 
 	// array of category we want as default
 	let subTitle = ['TODO', 'IN PROGRESS', 'DONE'];
@@ -214,6 +224,11 @@ function createCategory(event) {
 	}
 	// Closes the category form and resets the form
 	showTaskCategory(event);
+}
+
+function deleteCategory(event) {
+	let category = event.target.closest('.categoryTable');
+	category.remove();
 }
 
 // Create subtitle row: todo, progress and done
