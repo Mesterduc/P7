@@ -1,8 +1,21 @@
-let chosenSection;
+/* 
+Section of the file 
+  # 1. global variables and users array
+  # 2. Create members - category form and button action
+  # 3. Task - task form, button action, dropdown and moveTaskBox
+  # 4. Category - Category table and form - category form, form button action and create category
+*/
+
+/* --------------------------- 1. global variables and users array --------------------------- */
+
+// Store members in array
 let users = [];
 
+// Store the last table/section where user clicked on addtask button
+let chosenSection;
+
 //to get the initials from users
-function getNameInput(event) {
+function getNameInput() {
 	//get input from titel box
 	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box
 
@@ -25,42 +38,48 @@ function getNameInput(event) {
 	// Sets the h5 value
 	h5.innerHTML = formTextarea.value;
 }
-/* ------------------- Create members form --------------------------- */
+
+/* --------------------------- 2. Create members - category form and button action --------------------------- */
+
+// Adds a member to the memberform
 function addMemberToForm() {
 	let member = document.getElementsByClassName('memberInput')[0];
 
 	let memberInput = document.createElement('Input');
 	member.append(memberInput);
 
-	// Input class, type, input maxlength and placeholder
+	// Input: class, type, and input maxlength
 	memberInput.classList.add('names');
 	memberInput.type = 'text';
 	memberInput.maxLength = '4';
 	// names findes all elements with class "names"
 	let name = document.getElementsByClassName('names');
+	// Input: placeholder
 	memberInput.placeholder = 'Member ' + name.length;
 }
-
+// Appends the members to users array
 function createMembers() {
 	let name = document.getElementsByClassName('names');
 	//to set names into checkbox
 	for (let i = 0; i < name.length; i++) {
-		// const element = array[i];
+		// If input isn't empty: append the user
 		if (name[i].value != '') {
 			users.push(name[i].value);
 		}
 	}
 
 	let createMembersForm = document.getElementsByClassName('createMembers')[0];
-
+	// Removes the form
 	createMembersForm.classList.toggle('hideBox');
 }
 
-// open, closing and restet the task modal
+/* --------------------------- 3. Task - task form, button action, dropdown and moveTaskBox  --------------------------- */
+
+// open, closing and resets the inputs in the task form
 function showTaskBox(event) {
 	// event shows where we click the button
 	if (event) {
-		// finds parent with class of .TableColor
+		// finds parent with class of .categoryTable and saves the table in global variable "chosenSection"
 		chosenSection = event.target.closest('.categoryTable');
 	}
 	let createTask = document.getElementsByClassName('createTask__container')[0];
@@ -70,137 +89,63 @@ function showTaskBox(event) {
 	form.reset();
 }
 
-// Create new task, with the value we get from the modal
-function getInputValue(event) {
+// Create new task
+function createTask(event) {
 	// stops the default funtionality when clicking on the button
 	event.preventDefault();
 	let formElement = document.getElementsByClassName('createTaskInputName')[0]; //get input from titel box
-	let formTextarea = document.getElementsByClassName('createTaskTextarea')[0]; //get input from task box
+	let formTextarea = document.getElementsByClassName('createTaskTextarea')[0]; //get input from textarea box
 
-	//Implement the taskbox (section) from HTLM and define it as taskbox in script
-	let taskbox = document.createElement('section'); // Create the container for taskbox, created in HTML section
-	// taskbox.classList.add('id', 'mySection'); // Class for section
-	taskbox.classList.add('taskbox');
+	let taskbox = document.createElement('section'); // Create the container for taskbox
+	taskbox.classList.add('taskbox'); // adds class to the taskbox
 
 	// Task Header ----------------------------------------
 	// task title
-	let h4 = document.createElement('h4'); //Users input in formElement (title) will show on the screen
-	taskbox.append(h4);
-	// Sets the h4 value
-	h4.innerHTML = formElement.value;
-	h4.classList.add('taskboxTitle');
+	let h4 = document.createElement('h4'); // Users input in formElement (title) will show on the screen
+	taskbox.append(h4); // appends the h4 to the taskbox
 
-	// task description
+	h4.innerHTML = formElement.value; // Sets the h4 value
+	h4.classList.add('taskboxTitle'); // adds class to the h4
+
+	// Task description ----------------------------------------
 	let h5 = document.createElement('h5'); //Users input in formTextarea (Task describtion) will show on the screen
 	taskbox.append(h5);
 	// Sets the h5 value
 	h5.innerHTML = formTextarea.value;
 	//to make a checkbox window
 
+	// Task dropdown ----------------------------------------
+	// Calls dropdown function, that creates a dropdown menu
 	taskbox.append(dropdown());
-	let checkBoxContainer = document.createElement('section');
 
+	// Task checkbox ----------------------------------------
+	let checkBoxContainer = document.createElement('section');
 	for (let i = 0; i < users.length; i++) {
 		checkBoxContainer.classList.add('checkBox__container');
 		let checkBox = document.createElement('div');
-		let span = document.createElement('span');
+		checkBox.classList.add('checkBox');
+
 		let button = document.createElement('input');
 		button.type = 'checkbox';
-		checkBox.classList.add('checkBox');
-		button.className = 'btn';
+
+		let spanUserInitials = document.createElement('span');
+		spanUserInitials.innerHTML = users[i];
 
 		checkBoxContainer.append(checkBox);
 		checkBox.append(button);
-		checkBox.append(span);
-		span.innerHTML = users[i];
+		checkBox.append(spanUserInitials);
 		taskbox.append(checkBoxContainer);
 	}
 
-	// Append the task to the right section
+	// Append the task to the right section: which is stores in chosenSection variable in the top of the file
 	let todo = chosenSection.getElementsByClassName('categoryTodo')[0]; // finds where we need to put the task box
 	todo.append(taskbox); // Append the task to the todo section
 
-	// closes the taskbox and restes the form
+	// closes the taskbox and resets the form
 	showTaskBox();
 }
 
-// Open and closing the category box ('add category')
-function showTaskCategory() {
-	let formContainer = document.getElementsByClassName('createCategory__container')[0];
-	let form = document.getElementsByClassName('categoryForm')[0];
-
-	formContainer.classList.toggle('hideBox');
-	form.reset();
-}
-
-// Create category section
-function getCategoryValue(event) {
-	// A method is used to get input from titel
-	event.preventDefault();
-
-	// find form element
-	// take the form input value
-	let categoryForm = document.getElementsByClassName('categoryForm')[0];
-	let categoryText = categoryForm.getElementsByClassName('formInputName')[0].value;
-
-	let containerForm = document.getElementsByClassName('category')[0];
-
-	// create table for the category
-	let section = document.createElement('section');
-	section.classList.add('categoryTable');
-
-	// append the table to the html
-	containerForm.append(section);
-	let h1 = document.createElement('h1');
-
-	h1.classList.add('categoryTitle'); //h1 gets categoryTitle styling
-
-	// insert form input value to table header
-	h1.innerHTML = categoryText;
-
-	// append elements to each other
-	section.append(h1);
-
-	// array of category we want as default
-	let subTitle = ['TODO', 'IN PROGRESS', 'DONE'];
-
-	for (let i = 0; i < subTitle.length; i++) {
-		let row = createTableRow(subTitle[i]);
-		section.append(row);
-
-		// If the the element in the subTitle array is equel 'TODO' it creates the button to add task for the section
-		if (subTitle[i] === 'TODO') {
-			// Creates the button
-			let button = createTaskButton();
-
-			// Append the button after the TODO
-			// findes the parent node and inserts the button besides the todo node
-			row.parentNode.insertBefore(button, row.nextSibling);
-		}
-	}
-
-	showTaskCategory(event);
-}
-
-//to move task box around
-function moveTaskBox(event) {
-	const copy = event.target.closest('.Box');
-	const parent = event.target.closest('.categoryTable');
-	if (event.target.value === 'IN PROGRESS') {
-		let inProgress = parent.getElementsByClassName('categoryIn-progress')[0];
-		inProgress.append(copy);
-	}
-	if (event.target.value === 'DONE') {
-		let done = parent.getElementsByClassName('categoryDone')[0];
-		done.append(copy);
-	}
-	if (event.target.value === 'TODO') {
-		let todo = parent.getElementsByClassName('categoryTodo')[0];
-		todo.append(copy);
-	}
-}
-
-//to make a dropdown box with 3 options to choose between
+// Creates a dropdown box with 3 options to choose between
 function dropdown() {
 	let subTitle = ['TODO', 'IN PROGRESS', 'DONE'];
 
@@ -216,14 +161,88 @@ function dropdown() {
 		select.appendChild(option);
 	}
 
+	// adds eventlistener to the dropdown menu, thats changes the position of the task
 	select.addEventListener('change', (event) => {
 		moveTaskBox(event);
 	});
 	return select;
 }
 
-// Create todo, progress and done
-function createTableRow(title) {
+// Move task box around category
+function moveTaskBox(event) {
+	const taskboxCopy = event.target.closest('.taskbox'); // finds the taskbox
+	const parent = event.target.closest('.categoryTable');
+	if (event.target.value === 'IN PROGRESS') {
+		let inProgress = parent.getElementsByClassName('categoryIn-progress')[0];
+		inProgress.append(taskboxCopy);
+	}
+	if (event.target.value === 'DONE') {
+		let done = parent.getElementsByClassName('categoryDone')[0];
+		done.append(taskboxCopy);
+	}
+	if (event.target.value === 'TODO') {
+		let todo = parent.getElementsByClassName('categoryTodo')[0];
+		todo.append(taskboxCopy);
+	}
+}
+
+/* --------------------------- 4. Category table and form - category form, form button action and create category --------------------------- */
+
+// Resets, opens and closing the category form box ('add category')
+function showTaskCategory() {
+	let formContainer = document.getElementsByClassName('createCategory__container')[0];
+	let form = document.getElementsByClassName('categoryForm')[0];
+
+	formContainer.classList.toggle('hideBox');
+	form.reset();
+}
+
+// Create category table section
+function createCategory(event) {
+	// event stops the default functionality when clicking on the button
+	event.preventDefault();
+
+	let categoryForm = document.getElementsByClassName('categoryForm')[0]; // finds the form element
+	let categoryText = categoryForm.getElementsByClassName('formInputName')[0].value; // take the form input value
+
+	// create table for the category
+	let containerForm = document.getElementsByClassName('category')[0];
+	let section = document.createElement('section');
+	section.classList.add('categoryTable');
+	// append the table to the html
+	containerForm.append(section);
+
+	let h1 = document.createElement('h1');
+	h1.classList.add('categoryTitle'); //h1 gets categoryTitle styling
+	h1.innerHTML = categoryText; // insert form input value to table header
+
+	// append elements to each other
+	section.append(h1);
+
+	// array of category we want as default
+	let subTitle = ['TODO', 'IN PROGRESS', 'DONE'];
+
+	// creates the 3 sections for the category
+	for (let i = 0; i < subTitle.length; i++) {
+		let subTitleRow = createTableSubtitleRow(subTitle[i]);
+		section.append(subTitleRow);
+
+		// If the the element in the subTitle array is equel 'TODO' it creates the button to add task for the section
+		if (subTitle[i] === 'TODO') {
+			// Calls createTaskButton function that creates the button
+			let button = createTaskButton();
+
+			// Append the button after the TODO
+			// findes the parent node and inserts the button after the 'TODO' section
+			subTitleRow.parentNode.insertBefore(button, subTitleRow.nextSibling);
+		}
+	}
+	// Closes the category form and resets the form
+	showTaskCategory(event);
+}
+
+// Create subtitle row: todo, progress and done
+function createTableSubtitleRow(title) {
 	let h4 = document.createElement('h4');
 	if (title === 'TODO') {
 		h4.classList.add('categoryTodo');

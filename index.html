@@ -48,7 +48,7 @@
         <label>Task description:</label>
         <textarea class="createTaskTextarea" title="Task description" placeholder="Task description"></textarea>
         <article class="submit__button">
-          <button onclick="getInputValue(event)">Submit</button>
+          <button onclick="createTask(event)">Submit</button>
         </article>
       </section>
     </form>
@@ -63,12 +63,13 @@
         <label>Task category:</label>
         <input class="formInputName" type="text" title="task category" placeholder="Category title" />
         <article class="submit__button">
-          <button onclick="getCategoryValue(event)">Add</button>
+          <button onclick="createCategory(event)">Add</button>
         </article>
       </section>
     </form>
   </section>
 
+  <!-- Categories -->
   <section class="category__container">
     <section class="category">
       <section class="categoryTable">
@@ -107,6 +108,8 @@
         <h4 class="categoryDone">DONE</h4>
       </section>
     </section>
+
+    <!-- Opens create table from -->
     <div class="categoryButton__container categoryCreateTableButton__container">
       <button onclick="showTaskCategory()" class="categoryButton categoryCreateTableButton__button">
         + Add category
