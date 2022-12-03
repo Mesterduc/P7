@@ -14,31 +14,6 @@ let users = [];
 // Store the last table/section where user clicked on addtask button
 let chosenSection;
 
-//to get the initials from users
-function getNameInput() {
-	//get input from titel box
-	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box
-
-	//Implement the taskbox (section) from HTLM and define it as taskbox in script
-	let taskbox = document.createElement('section'); // Create the container for taskbox, created in HTML section
-	taskbox.classList.add('id', 'mySection'); // Class for section
-	taskbox.classList.add('Box');
-
-	// Task Header ----------------------------------------
-	// task title
-	let h4 = document.createElement('h4'); //Users input in formElement (title) will show on the screen
-	taskbox.append(h4);
-	// Sets the h4 value
-	h4.innerHTML = "Write the all group members' initials";
-	h4.classList.add('BoxForTitle');
-
-	// task description
-	let h5 = document.createElement('h5'); //Users input in formTextarea (Task describtion) will show on the screen
-	taskbox.append(h5);
-	// Sets the h5 value
-	h5.innerHTML = formTextarea.value;
-}
-
 /* --------------------------- 2. Create members - category form and button action --------------------------- */
 
 // Adds a member to the memberform
