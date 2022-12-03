@@ -41,28 +41,33 @@
   <section class="hideBox createTask__container">
     <form class="taskform">
       <!--Implementing the remove (x) bottom-->
-      <span onclick="showTaskBox(event)" class="createTask__closeButton" title="Close Modal">×</span>
-      <section class="createTask__fieldset">
+      <span onclick="showTaskBox(event)" class="closeButton" title="Close Modal">×</span>
+      <section class="fieldset">
         <label>Title:</label>
         <input class="createTaskInputName" type="text" title="Task title" placeholder="Task title" />
         <label>Task description:</label>
         <textarea class="createTaskTextarea" title="Task description" placeholder="Task description"></textarea>
-        <article class="createTask__button">
+        <article class="submit__button">
           <button onclick="getInputValue(event)">Submit</button>
         </article>
       </section>
     </form>
   </section>
 
-  <form class="hideBox category-form" style="width: 200px">
-    <!--Implementing the remove (x) bottom-->
-    <span onclick="showTaskCategory()" class="close" title="Close Modal">×</span>
-    <fieldset class="TitleColor">
-      <label>Task category:<br /></label>
-      <input class="formInputName" type="text" title="task category" /><br />
-      <button onclick="getCategoryValue(event)">Add</button>
-    </fieldset>
-  </form>
+  <!-- Create category form -->
+  <section class="hideBox createCategory__container">
+    <form class="categoryForm">
+      <!--Implementing the remove (x) botton-->
+      <span onclick="showTaskCategory()" class="closeButton" title="Close Modal">×</span>
+      <section class="fieldset">
+        <label>Task category:</label>
+        <input class="formInputName" type="text" title="task category" placeholder="Category title" />
+        <article class="submit__button">
+          <button onclick="getCategoryValue(event)">Add</button>
+        </article>
+      </section>
+    </form>
+  </section>
 
   <section class="AddCategory">
     <section class="container">

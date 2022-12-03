@@ -123,8 +123,10 @@ function getInputValue(event) {
 
 // Open and closing the category box ('add category')
 function showTaskCategory() {
-	let form = document.getElementsByClassName('category-form')[0];
-	form.classList.toggle('showCategoryBox');
+	let formContainer = document.getElementsByClassName('createCategory__container')[0];
+	let form = document.getElementsByClassName('categoryForm')[0];
+
+	formContainer.classList.toggle('hideBox');
 	form.reset();
 }
 
@@ -135,7 +137,7 @@ function getCategoryValue(event) {
 
 	// find form element
 	// take the form input value
-	let categoryForm = document.getElementsByClassName('category-form')[0];
+	let categoryForm = document.getElementsByClassName('categoryForm')[0];
 	let categoryText = categoryForm.getElementsByClassName('formInputName')[0].value;
 
 	let containerForm = document.getElementsByClassName('container')[0];

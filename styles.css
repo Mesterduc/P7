@@ -1,10 +1,45 @@
-/* hide box */
+/* --------------------------- Reused styling --------------------------- */
+
+/* hidebox */
 .hideBox{
     display: none;
 }
 
+/* Styling the closing x, its position and colour */
+.closeButton {
+    position: absolute;
+    top: -35px;
+    right: -20px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #070000;
+    border: none;
+    background-color: transparent;
+}
 
-/* ------------------- Create Task form --------------------------- */
+/* Colour x when it is pointed at */
+.closeButton:hover {
+    color: #7b7c7b;
+    cursor: pointer;
+}
+
+.submit__button {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fieldset {
+    display: flex;
+    flex-direction: column;
+    background-color: darkgray;
+    padding: 10px;
+    font-size: larger;
+    text-align: center;
+}
+
+/* --------------------------- Create Task form --------------------------- */
 
 /* Create members box background */
 .createMembers_container{
@@ -31,7 +66,7 @@
     text-align: center;
 }
 
-/* ------------------- Create members form --------------------------- */
+/* --------------------------- Create members form --------------------------- */
 .createTask__container {
     width: 250px;
     position: absolute;
@@ -40,46 +75,23 @@
     transform: translate(-50%, -50%);
 }
 
-/* Styling the closing x, its position and colour */
-.createTask__closeButton {
-    position: absolute;
-    top: -25%;
-    left: 100%;
-    font-size: 35px;
-    font-weight: bold;
-    color: #070000;
-    border: none;
-    background-color: transparent;
-}
-
-/* Colour x when it is pointed at */
-.createTask__closeButton:hover {
-    color: #7b7c7b;
-    cursor: pointer;
-}
-
 .createTaskTextarea {
     height: 75px;
     resize: none;
 }
 
-.createTask__fieldset {
-    display: flex;
-    flex-direction: column;
-    background-color: darkgray;
-    padding: 10px;
-    font-size: larger;
-    text-align: center;
+/* --------------------------- Create category form --------------------------- */
+
+.createCategory__container {
+    width: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.createTask__button {
-    margin-top: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* ---------------------------------------------------------------------------- */
 
-/* ------------------- Create category form --------------------------- */
 .container {
     display: flex;
     align-items: flex-start;
@@ -106,9 +118,6 @@
 
 .TableColor {
     background-color: lightgray;
-
-
-
 }
 
 .btn {
@@ -152,30 +161,6 @@
     display: flex;
 }
 
-.showTaskBox {
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.showCategoryBox {
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-
-/* reset fieldset property */
-fieldset {
-    border-width: 0px;
-    border-spacing: 0px;
-    margin-inline-start: 0px;
-}
-
 .Box {
     display: block;
     border: 1px solid black;
@@ -185,17 +170,6 @@ fieldset {
     margin-bottom: 10px;
     
 }
-.BoxForTitle {
-    display: block;
-    border: 1px solid black;
-    background-color: rgb(209, 222, 251); 
-    width: 200px;
-    padding: 10px;
-    border-block-start: none;
-    border-inline: none;
-    margin-block-start: auto;
-    padding-inline: initial;
-}
 .categoryBorders {
     border-radius: 10px;
     margin-right: 5px;
@@ -203,18 +177,4 @@ fieldset {
 
 .subTitle {
     padding: 5px;
-}
-
-.checkBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: x-small;
-}
-
-
-.checkBoxContainer{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 10px;
 }
