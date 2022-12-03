@@ -1,3 +1,29 @@
+/* hide box */
+.hideBox{
+    display: none;
+}
+
+/* ------------------- Create Task form --------------------------- */
+
+
+/* ------------------- Create members form --------------------------- */
+
+/* Create members box background */
+.createMembers_container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: aliceblue;
+}
+
+/* Center the from in */
+.createMembers__position{
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    border: solid black;
+}
 
 .memberBox{
     background-color: darkgray;
@@ -7,25 +33,7 @@
     text-align: center;
 }
 
-.createAddMember{
-    display: none;
-   
-}
 
-.goodbye{
-    position: absolute;
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    border: solid black;
-}
-
-.boxInBox{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: aliceblue;
-}
 
 .container {
     display: flex;
@@ -100,10 +108,6 @@
     display: flex;
 }
 
-.form {
-    display: none;
-}
-
 .showTaskBox {
     display: block;
     position: absolute;
@@ -152,6 +156,7 @@ fieldset {
     background-color: rgb(209, 222, 251); 
     width: 200px;
     padding: 10px;
+    margin-bottom: 10px;
     
 }
 .BoxForTitle {

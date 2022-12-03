@@ -17,13 +17,13 @@
 
 <body>
   <!--table data Modal-->
-  <form class="form" style="width: 200px">
+  <form class="hideBox form" style="width: 200px">
     <!--Implementing the remove (x) bottom-->
     <span onclick="showTaskBox(event)" class="close" title="Close Modal">×</span>
 
     <fieldset class="TitleColor">
       <label>Title:<br /></label>
-      <input class="form-title" type="text" title="title" /><br />
+      <input class="formInputName" type="text" title="title" /><br />
       <label>Task description:<br /></label>
       <textarea class="task" title="task"></textarea><br />
       <button onclick="getInputValue(event)">Submit</button>
@@ -33,21 +33,20 @@
   <h1>DAD Project Management System</h1>
 
   <!--to make a box for name input-->
-  <section class="boxInBox">
-    <section class="goodbye">
+  <section class="createMembers createMembers_container">
+    <section class="createMembers__position">
       <fieldset class="memberBox">
         <label>Write initials of all group members:<br /></label>
         <section class="memberInput">
-          <input class="form-title names" type="text" title="title" placeholder="Member 1" maxlength="4" /><br />
-
-          <input class="form-title names" type="text" title="title" placeholder="Member 2" maxlength="4" /><br />
-          <input class="form-title names" type="text" title="title" placeholder="Member 3" maxlength="4" /><br />
-          <input class="form-title names" type="text" title="title" placeholder="Member 4" maxlength="4" /><br />
+          <input class="formInputName names" type="text" title="Name" placeholder="Member 1" maxlength="4" /><br />
+          <input class="formInputName names" type="text" title="Name" placeholder="Member 2" maxlength="4" /><br />
+          <input class="formInputName names" type="text" title="Name" placeholder="Member 3" maxlength="4" /><br />
+          <input class="formInputName names" type="text" title="Name" placeholder="Member 4" maxlength="4" /><br />
         </section>
-        <button onclick="createAddMember(event)" class="btn btn--primary">
+        <button onclick="addMemberToForm()" class="btn btn--primary">
           + Add a member
         </button>
-        <button onclick="addMember(event)">Submit</button>
+        <button onclick="createMembers()">Submit</button>
       </fieldset>
     </section>
   </section>
@@ -97,12 +96,12 @@
     </div>
   </section>
 
-  <form class="form category-form" style="width: 200px">
+  <form class="hideBox category-form" style="width: 200px">
     <!--Implementing the remove (x) bottom-->
     <span onclick="showTaskCategory()" class="close" title="Close Modal">×</span>
     <fieldset class="TitleColor">
       <label>Task category:<br /></label>
-      <input class="form-title" type="text" title="task category" /><br />
+      <input class="formInputName" type="text" title="task category" /><br />
       <button onclick="getCategoryValue(event)">Add</button>
     </fieldset>
   </form>

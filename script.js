@@ -25,8 +25,8 @@ function getNameInput(event) {
 	// Sets the h5 value
 	h5.innerHTML = formTextarea.value;
 }
-
-function createAddMember(event) {
+/* ------------------- Create members form --------------------------- */
+function addMemberToForm() {
 	let member = document.getElementsByClassName('memberInput')[0];
 
 	let memberInput = document.createElement('Input');
@@ -38,7 +38,7 @@ function createAddMember(event) {
 	memberInput.maxLength = '4';
 }
 
-function addMember() {
+function createMembers() {
 	let name = document.getElementsByClassName('names');
 	//to set names into checkbox
 	for (let i = 0; i < name.length; i++) {
@@ -48,10 +48,9 @@ function addMember() {
 		}
 	}
 
-	let bye = document.getElementsByClassName('boxInBox')[0];
+	let createMembersForm = document.getElementsByClassName('createMembers')[0];
 
-	bye.classList.toggle('createAddMember');
-	bye.reset();
+	createMembersForm.classList.toggle('hideBox');
 }
 
 // open, closing and restet the task modal
@@ -71,7 +70,7 @@ function showTaskBox(event) {
 function getInputValue(event) {
 	// stops the default funtionality when clicking on the button
 	event.preventDefault();
-	let formElement = document.getElementsByClassName('form-title')[0]; //get input from titel box
+	let formElement = document.getElementsByClassName('formInputName')[0]; //get input from titel box
 	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box
 
 	//Implement the taskbox (section) from HTLM and define it as taskbox in script
@@ -136,7 +135,7 @@ function getCategoryValue(event) {
 	// find form element
 	// take the form input value
 	let categoryForm = document.getElementsByClassName('category-form')[0];
-	let categoryText = categoryForm.getElementsByClassName('form-title')[0].value;
+	let categoryText = categoryForm.getElementsByClassName('formInputName')[0].value;
 
 	let containerForm = document.getElementsByClassName('container')[0];
 
