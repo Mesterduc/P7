@@ -1,4 +1,16 @@
-/* --------------------------- Reused styling --------------------------- */
+/* 
+sections for styling the page:
+
+    # 1. Reused styling
+    # 2. Create Task form
+    # 3. Create members form
+    # 4. Create category form
+    # 5. Category table
+    # 6. Category taskbox
+*/
+
+
+/* --------------------------- 1. Reused styling --------------------------- */
 
 /* hidebox */
 .hideBox{
@@ -39,7 +51,7 @@
     text-align: center;
 }
 
-/* --------------------------- Create Task form --------------------------- */
+/* --------------------------- 2. Create Task form --------------------------- */
 
 /* Create members box background */
 .createMembers_container{
@@ -76,7 +88,7 @@
     justify-content: space-between;
 }
 
-/* --------------------------- Create members form --------------------------- */
+/* --------------------------- 3. Create members form --------------------------- */
 .createTask__container {
     width: 250px;
     position: absolute;
@@ -90,7 +102,7 @@
     resize: none;
 }
 
-/* --------------------------- Create category form --------------------------- */
+/* --------------------------- 4. Create category form --------------------------- */
 
 .createCategory__container {
     width: 250px;
@@ -100,7 +112,7 @@
     transform: translate(-50%, -50%);
 }
 
-/* --------------------------- Category table --------------------------- */
+/* --------------------------- 5. Category table --------------------------- */
 
 .category__container {
     display: flex;
@@ -160,7 +172,7 @@
     border-radius: 10px;
 }
 
-/* --------------------------- Category taskbox --------------------------- */
+/* --------------------------- 6. Category taskbox --------------------------- */
 
 .taskbox {
     display: block;
