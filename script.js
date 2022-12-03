@@ -30,12 +30,15 @@ function addMemberToForm() {
 	let member = document.getElementsByClassName('memberInput')[0];
 
 	let memberInput = document.createElement('Input');
-	memberInput.classList.add('names');
 	member.append(memberInput);
 
+	// Input class, type, input maxlength and placeholder
+	memberInput.classList.add('names');
+	memberInput.type = 'text';
+	memberInput.maxLength = '4';
+	// names findes all elements with class "names"
 	let name = document.getElementsByClassName('names');
 	memberInput.placeholder = 'Member ' + name.length;
-	memberInput.maxLength = '4';
 }
 
 function createMembers() {
