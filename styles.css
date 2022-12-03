@@ -3,10 +3,8 @@
     display: none;
 }
 
+
 /* ------------------- Create Task form --------------------------- */
-
-
-/* ------------------- Create members form --------------------------- */
 
 /* Create members box background */
 .createMembers_container{
@@ -33,8 +31,55 @@
     text-align: center;
 }
 
+/* ------------------- Create members form --------------------------- */
+.createTask__container {
+    width: 250px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 
+/* Styling the closing x, its position and colour */
+.createTask__closeButton {
+    position: absolute;
+    top: -25%;
+    left: 100%;
+    font-size: 35px;
+    font-weight: bold;
+    color: #070000;
+    border: none;
+    background-color: transparent;
+}
 
+/* Colour x when it is pointed at */
+.createTask__closeButton:hover {
+    color: #7b7c7b;
+    cursor: pointer;
+}
+
+.createTaskTextarea {
+    height: 75px;
+    resize: none;
+}
+
+.createTask__fieldset {
+    display: flex;
+    flex-direction: column;
+    background-color: darkgray;
+    padding: 10px;
+    font-size: larger;
+    text-align: center;
+}
+
+.createTask__button {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------- Create category form --------------------------- */
 .container {
     display: flex;
     align-items: flex-start;
@@ -57,7 +102,6 @@
     padding: 10px;
     font-size: larger;
     text-align: center;
-   
 }
 
 .TableColor {
@@ -130,24 +174,6 @@ fieldset {
     border-width: 0px;
     border-spacing: 0px;
     margin-inline-start: 0px;
-}
-
-/* Styling the closing x, its position and colour */
-.close {
-    position: absolute;
-    top: -25%;
-    left: 100%;
-    font-size: 40px;
-    font-weight: bold;
-    color: #070000;
-    border: none;
-    background-color: transparent;
-}
-
-/* Colour x when it is pointed at */
-.close:hover {
-    color: #7b7c7b;
-    cursor: pointer;
 }
 
 .Box {

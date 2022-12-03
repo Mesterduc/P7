@@ -60,9 +60,10 @@ function showTaskBox(event) {
 		// finds parent with class of .TableColor
 		chosenSection = event.target.closest('.TableColor');
 	}
-	let form = document.getElementsByClassName('form')[0];
-	// toggle the class for the elements
-	form.classList.toggle('showTaskBox');
+	let createTask = document.getElementsByClassName('createTask__container')[0];
+	let form = document.getElementsByClassName('taskform')[0];
+	// toggle the class for hidding the elements
+	createTask.classList.toggle('hideBox');
 	form.reset();
 }
 
@@ -70,8 +71,8 @@ function showTaskBox(event) {
 function getInputValue(event) {
 	// stops the default funtionality when clicking on the button
 	event.preventDefault();
-	let formElement = document.getElementsByClassName('formInputName')[0]; //get input from titel box
-	let formTextarea = document.getElementsByClassName('task')[0]; //get input from task box
+	let formElement = document.getElementsByClassName('createTaskInputName')[0]; //get input from titel box
+	let formTextarea = document.getElementsByClassName('createTaskTextarea')[0]; //get input from task box
 
 	//Implement the taskbox (section) from HTLM and define it as taskbox in script
 	let taskbox = document.createElement('section'); // Create the container for taskbox, created in HTML section
