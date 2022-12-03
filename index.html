@@ -1,147 +1,113 @@
 <!DOCTYPE html>
 <!-- sprog -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- ^reading characters -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- compatility to device -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DAD Project Management</title>
-    <!-- title on webpage -->
-    <link rel="stylesheet" href="styles.css" />
-    <!-- links to CSS stylesheet-->
-  </head>
-  <!-- all html content must be in body - defines the whole code-->
-  <body>
-    <!--table data Modal-->
-    <form class="form" style="width: 200px">
-      <!--Implementing the remove (x) bottom-->
-      <span onclick="showTaskBox(event)" class="close" title="Close Modal"
-        >×</span
-      >
 
-      <fieldset class="TitleColor">
-        <label>Title:<br /></label>
-        <input class="form-title" type="text" title="title" /><br />
-        <label>Task description:<br /></label>
-        <textarea class="task" title="task"></textarea><br />
-        <button onclick="getInputValue(event)">Submit</button>
-      </fieldset>
-    </form>
+<head>
+  <meta charset="UTF-8" />
+  <!-- ^reading characters -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- compatility to device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAD Project Management</title>
+  <!-- title on webpage -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- links to CSS stylesheet-->
+</head>
+<!-- all html content must be in body - defines the whole code-->
 
-    <h1>DAD Project Management System</h1>
+<body>
+  <!--table data Modal-->
+  <form class="form" style="width: 200px">
+    <!--Implementing the remove (x) bottom-->
+    <span onclick="showTaskBox(event)" class="close" title="Close Modal">×</span>
 
-    <!--to make a box for name input-->
-    <section class="boxInBox">
-      <section class="goodbye">
-        <fieldset class="memberBox">
-          <label>Write initials of all group members:<br /></label>
-          <section class="memberInput">
-            <input
-              class="form-title names"
-              type="text"
-              title="title"
-              placeholder="Member 1"
-              maxlength="4"
-            /><br />
+    <fieldset class="TitleColor">
+      <label>Title:<br /></label>
+      <input class="form-title" type="text" title="title" /><br />
+      <label>Task description:<br /></label>
+      <textarea class="task" title="task"></textarea><br />
+      <button onclick="getInputValue(event)">Submit</button>
+    </fieldset>
+  </form>
 
-            <input
-              class="form-title names"
-              type="text"
-              title="title"
-              placeholder="Member 2"
-              maxlength="4"
-            /><br />
-            <input
-              class="form-title names"
-              type="text"
-              title="title"
-              placeholder="Member 3"
-              maxlength="4"
-            /><br />
-            <input
-              class="form-title names"
-              type="text"
-              title="title"
-              placeholder="Member 4"
-              maxlength="4"
-            /><br />
-          </section>
-          <button onclick="createAddMember(event)" class="btn btn--primary">
-            + Add a member
-          </button>
-          <button onclick="addMember(event)">Submit</button>
-        </fieldset>
-      </section>
-    </section>
-    <section class="AddCategory">
-      <section class="container">
-        <!--container defines our costum styles - defined in styles.css-->
-        <section class="TableColor categoryBorders subTitle">
-          <h1 class="TitleColor">Introduction</h1>
-          <h4 class="todo">TODO</h4>
-          <div class="center">
-            <button
-              onclick="showTaskBox(event)"
-              class="btn btn--primary add-task"
-            >
-              + Add task
-            </button>
-          </div>
-          <h4 class="IN-PROGRESS">IN PROGRESS</h4>
-          <h4 class="done">DONE</h4>
+  <h1>DAD Project Management System</h1>
+
+  <!--to make a box for name input-->
+  <section class="boxInBox">
+    <section class="goodbye">
+      <fieldset class="memberBox">
+        <label>Write initials of all group members:<br /></label>
+        <section class="memberInput">
+          <input class="form-title names" type="text" title="title" placeholder="Member 1" maxlength="4" /><br />
+
+          <input class="form-title names" type="text" title="title" placeholder="Member 2" maxlength="4" /><br />
+          <input class="form-title names" type="text" title="title" placeholder="Member 3" maxlength="4" /><br />
+          <input class="form-title names" type="text" title="title" placeholder="Member 4" maxlength="4" /><br />
         </section>
-
-        <section class="TableColor categoryBorders subTitle">
-          <h1 class="TitleColor">Problem analysis</h1>
-          <h4 class="todo">TODO</h4>
-          <div class="center">
-            <button
-              onclick="showTaskBox(event)"
-              class="btn btn--primary add-task"
-            >
-              + Add task
-            </button>
-          </div>
-          <h4 class="IN-PROGRESS">IN PROGRESS</h4>
-          <h4 class="done">DONE</h4>
-        </section>
-
-        <section class="TableColor categoryBorders subTitle">
-          <h1 class="TitleColor">Methods</h1>
-          <h4 class="todo">TODO</h4>
-          <div class="center">
-            <button
-              onclick="showTaskBox(event)"
-              class="btn btn--primary add-task"
-            >
-              + Add task
-            </button>
-          </div>
-          <h4 class="IN-PROGRESS">IN PROGRESS</h4>
-          <h4 class="done">DONE</h4>
-        </section>
-      </section>
-      <div class="center category-container categoryBorders">
-        <button onclick="showTaskCategory()" class="btn--primary btn-category">
-          + Add category
+        <button onclick="createAddMember(event)" class="btn btn--primary">
+          + Add a member
         </button>
-      </div>
-    </section>
-
-    <form class="form category-form" style="width: 200px">
-      <!--Implementing the remove (x) bottom-->
-      <span onclick="showTaskCategory()" class="close" title="Close Modal"
-        >×</span
-      >
-      <fieldset class="TitleColor">
-        <label>Task category:<br /></label>
-        <input class="form-title" type="text" title="task category" /><br />
-        <button onclick="getCategoryValue(event)">Add</button>
+        <button onclick="addMember(event)">Submit</button>
       </fieldset>
-    </form>
-    <!--links to javascript-->
-    <script src="script.js"></script>
-  </body>
+    </section>
+  </section>
+  <section class="AddCategory">
+    <section class="container">
+      <!--container defines our costum styles - defined in styles.css-->
+      <section class="TableColor categoryBorders subTitle">
+        <h1 class="TitleColor">Introduction</h1>
+        <h4 class="todo">TODO</h4>
+        <div class="center">
+          <button onclick="showTaskBox(event)" class="btn btn--primary add-task">
+            + Add task
+          </button>
+        </div>
+        <h4 class="IN-PROGRESS">IN PROGRESS</h4>
+        <h4 class="done">DONE</h4>
+      </section>
+
+      <section class="TableColor categoryBorders subTitle">
+        <h1 class="TitleColor">Problem analysis</h1>
+        <h4 class="todo">TODO</h4>
+        <div class="center">
+          <button onclick="showTaskBox(event)" class="btn btn--primary add-task">
+            + Add task
+          </button>
+        </div>
+        <h4 class="IN-PROGRESS">IN PROGRESS</h4>
+        <h4 class="done">DONE</h4>
+      </section>
+
+      <section class="TableColor categoryBorders subTitle">
+        <h1 class="TitleColor">Methods</h1>
+        <h4 class="todo">TODO</h4>
+        <div class="center">
+          <button onclick="showTaskBox(event)" class="btn btn--primary add-task">
+            + Add task
+          </button>
+        </div>
+        <h4 class="IN-PROGRESS">IN PROGRESS</h4>
+        <h4 class="done">DONE</h4>
+      </section>
+    </section>
+    <div class="center category-container categoryBorders">
+      <button onclick="showTaskCategory()" class="btn--primary btn-category">
+        + Add category
+      </button>
+    </div>
+  </section>
+
+  <form class="form category-form" style="width: 200px">
+    <!--Implementing the remove (x) bottom-->
+    <span onclick="showTaskCategory()" class="close" title="Close Modal">×</span>
+    <fieldset class="TitleColor">
+      <label>Task category:<br /></label>
+      <input class="form-title" type="text" title="task category" /><br />
+      <button onclick="getCategoryValue(event)">Add</button>
+    </fieldset>
+  </form>
+  <!--links to javascript-->
+  <script src="script.js"></script>
+</body>
+
 </html>
