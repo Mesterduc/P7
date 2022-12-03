@@ -18,7 +18,7 @@
 <body>
   <h1>DAD Project Management System</h1>
 
-  <!--to make a box for name input-->
+  <!-- Create members -->
   <section class="createMembers createMembers_container">
     <section class="createMembers__position">
       <section class="memberBox">
@@ -29,7 +29,7 @@
           <input class="names" type="text" title="Name" placeholder="Member 3" maxlength="4" />
           <input class="names" type="text" title="Name" placeholder="Member 4" maxlength="4" />
         </section>
-        <button onclick="addMemberToForm()" class="btn btn--primary">
+        <button onclick="addMemberToForm()" class="btn categoryButton">
           + Add a member
         </button>
         <button onclick="createMembers()">Submit</button>
@@ -69,47 +69,46 @@
     </form>
   </section>
 
-  <section class="AddCategory">
-    <section class="container">
-      <!--container defines our costum styles - defined in styles.css-->
-      <section class="TableColor categoryBorders subTitle">
-        <h1 class="TitleColor">Introduction</h1>
-        <h4 class="todo">TODO</h4>
-        <div class="center">
-          <button onclick="showTaskBox(event)" class="btn btn--primary add-task">
+  <section class="category__container">
+    <section class="category">
+      <section class="categoryTable">
+        <h1 class="categoryTitle">Introduction</h1>
+        <h4 class="categoryTodo">TODO</h4>
+        <div class="categoryButton__container">
+          <button onclick="showTaskBox(event)" class="categoryButton">
             + Add task
           </button>
         </div>
-        <h4 class="IN-PROGRESS">IN PROGRESS</h4>
-        <h4 class="done">DONE</h4>
+        <h4 class="categoryIn-progress">IN PROGRESS</h4>
+        <h4 class="categoryDone">DONE</h4>
       </section>
 
-      <section class="TableColor categoryBorders subTitle">
-        <h1 class="TitleColor">Problem analysis</h1>
-        <h4 class="todo">TODO</h4>
-        <div class="center">
-          <button onclick="showTaskBox(event)" class="btn btn--primary add-task">
+      <section class="categoryTable">
+        <h1 class="categoryTitle">Problem analysis</h1>
+        <h4 class="categoryTodo">TODO</h4>
+        <div class="categoryButton__container">
+          <button onclick="showTaskBox(event)" class="categoryButton">
             + Add task
           </button>
         </div>
-        <h4 class="IN-PROGRESS">IN PROGRESS</h4>
-        <h4 class="done">DONE</h4>
+        <h4 class="categoryIn-progress">IN PROGRESS</h4>
+        <h4 class="categoryDone">DONE</h4>
       </section>
 
-      <section class="TableColor categoryBorders subTitle">
-        <h1 class="TitleColor">Methods</h1>
-        <h4 class="todo">TODO</h4>
-        <div class="center">
-          <button onclick="showTaskBox(event)" class="btn btn--primary add-task">
+      <section class="categoryTable">
+        <h1 class="categoryTitle">Methods</h1>
+        <h4 class="categoryTodo">TODO</h4>
+        <div class="categoryButton__container">
+          <button onclick="showTaskBox(event)" class="categoryButton">
             + Add task
           </button>
         </div>
-        <h4 class="IN-PROGRESS">IN PROGRESS</h4>
-        <h4 class="done">DONE</h4>
+        <h4 class="categoryIn-progress">IN PROGRESS</h4>
+        <h4 class="categoryDone">DONE</h4>
       </section>
     </section>
-    <div class="center category-container categoryBorders">
-      <button onclick="showTaskCategory()" class="btn--primary btn-category">
+    <div class="categoryButton__container categoryCreateTableButton__container">
+      <button onclick="showTaskCategory()" class="categoryButton categoryCreateTableButton__button">
         + Add category
       </button>
     </div>

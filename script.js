@@ -61,7 +61,7 @@ function showTaskBox(event) {
 	// event shows where we click the button
 	if (event) {
 		// finds parent with class of .TableColor
-		chosenSection = event.target.closest('.TableColor');
+		chosenSection = event.target.closest('.categoryTable');
 	}
 	let createTask = document.getElementsByClassName('createTask__container')[0];
 	let form = document.getElementsByClassName('taskform')[0];
@@ -79,8 +79,8 @@ function getInputValue(event) {
 
 	//Implement the taskbox (section) from HTLM and define it as taskbox in script
 	let taskbox = document.createElement('section'); // Create the container for taskbox, created in HTML section
-	taskbox.classList.add('id', 'mySection'); // Class for section
-	taskbox.classList.add('Box');
+	// taskbox.classList.add('id', 'mySection'); // Class for section
+	taskbox.classList.add('taskbox');
 
 	// Task Header ----------------------------------------
 	// task title
@@ -88,7 +88,7 @@ function getInputValue(event) {
 	taskbox.append(h4);
 	// Sets the h4 value
 	h4.innerHTML = formElement.value;
-	h4.classList.add('BoxForTitle');
+	h4.classList.add('taskboxTitle');
 
 	// task description
 	let h5 = document.createElement('h5'); //Users input in formTextarea (Task describtion) will show on the screen
@@ -101,7 +101,7 @@ function getInputValue(event) {
 	let checkBoxContainer = document.createElement('section');
 
 	for (let i = 0; i < users.length; i++) {
-		checkBoxContainer.classList.add('checkBoxContainer');
+		checkBoxContainer.classList.add('checkBox__container');
 		let checkBox = document.createElement('div');
 		let span = document.createElement('span');
 		let button = document.createElement('input');
@@ -117,7 +117,7 @@ function getInputValue(event) {
 	}
 
 	// Append the task to the right section
-	let todo = chosenSection.getElementsByClassName('todo')[0]; // finds where we need to put the task box
+	let todo = chosenSection.getElementsByClassName('categoryTodo')[0]; // finds where we need to put the task box
 	todo.append(taskbox); // Append the task to the todo section
 
 	// closes the taskbox and restes the form
@@ -143,17 +143,17 @@ function getCategoryValue(event) {
 	let categoryForm = document.getElementsByClassName('categoryForm')[0];
 	let categoryText = categoryForm.getElementsByClassName('formInputName')[0].value;
 
-	let containerForm = document.getElementsByClassName('container')[0];
+	let containerForm = document.getElementsByClassName('category')[0];
 
 	// create table for the category
 	let section = document.createElement('section');
-	section.classList.add('TableColor', 'categoryBorders', 'subTitle');
+	section.classList.add('categoryTable');
 
 	// append the table to the html
 	containerForm.append(section);
 	let h1 = document.createElement('h1');
 
-	h1.classList.add('TitleColor'); //h1 gets TitleColor styling
+	h1.classList.add('categoryTitle'); //h1 gets categoryTitle styling
 
 	// insert form input value to table header
 	h1.innerHTML = categoryText;
@@ -185,17 +185,17 @@ function getCategoryValue(event) {
 //to move task box around
 function moveTaskBox(event) {
 	const copy = event.target.closest('.Box');
-	const parent = event.target.closest('.TableColor');
+	const parent = event.target.closest('.categoryTable');
 	if (event.target.value === 'IN PROGRESS') {
-		let inProgress = parent.getElementsByClassName('IN-PROGRESS')[0];
+		let inProgress = parent.getElementsByClassName('categoryIn-progress')[0];
 		inProgress.append(copy);
 	}
 	if (event.target.value === 'DONE') {
-		let done = parent.getElementsByClassName('done')[0];
+		let done = parent.getElementsByClassName('categoryDone')[0];
 		done.append(copy);
 	}
 	if (event.target.value === 'TODO') {
-		let todo = parent.getElementsByClassName('todo')[0];
+		let todo = parent.getElementsByClassName('categoryTodo')[0];
 		todo.append(copy);
 	}
 }
@@ -224,22 +224,18 @@ function dropdown() {
 
 // Create todo, progress and done
 function createTableRow(title) {
-	let section = document.createElement('section');
 	let h4 = document.createElement('h4');
 	if (title === 'TODO') {
-		h4.classList.add('todo');
+		h4.classList.add('categoryTodo');
 	}
 	if (title === 'IN PROGRESS') {
-		h4.classList.add('IN-PROGRESS');
+		h4.classList.add('categoryIn-progress');
 	}
 	if (title === 'DONE') {
-		h4.classList.add('done');
+		h4.classList.add('categoryDone');
 	}
-
 	h4.innerHTML = title;
-	section.append(h4);
-
-	return section;
+	return h4;
 }
 
 // Create task button
@@ -252,8 +248,8 @@ function createTaskButton() {
 	let button = document.createElement('button');
 
 	// Add class for the elements
-	div.classList.add('center');
-	button.classList.add('btn', 'btn--primary', 'add-task');
+	div.classList.add('categoryButton__container');
+	button.classList.add('categoryButton');
 
 	// Add value to button
 	button.innerHTML = '+ Add task';

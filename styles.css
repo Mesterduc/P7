@@ -100,25 +100,24 @@
     transform: translate(-50%, -50%);
 }
 
-/* ---------------------------------------------------------------------------- */
+/* --------------------------- Category table --------------------------- */
 
-.container {
+.category__container {
+    display: flex;
+}
+
+.category {
     display: flex;
     align-items: flex-start;
 }
 
-.textHeader {
-    border: 1px solid black;
-   
+.categoryTable {
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-right: 5px;
+    padding: 5px;
 }
-
-.alignbutton {
-    display: flex;
-    justify-content: space-evenly;
-
-}
-
-.TitleColor {
+.categoryTitle {
     background-color: darkgray;
     width: 200px;
     padding: 10px;
@@ -126,28 +125,27 @@
     text-align: center;
 }
 
-.TableColor {
-    background-color: lightgray;
+.categoryButton__container {
+    display: flex;
+    justify-content: center;
+    height: 35px;
 }
 
-.btn {
+.categoryButton {
     border-radius: 70px;
     white-space: nowrap;
-
-}
-
-.btn--primary {
     background: rgb(105, 131, 100);
     width: 80%;
     display: inline-block;
 }
 
-.btn--primary:hover {
+.categoryButton:hover {
     color: #3c3d3c;
     cursor: pointer;
 }
 
-.btn-category {
+/* Create category table button */
+.categoryCreateTableButton__button {
     font-size: 16.5px;
     border-radius: 10px;
     padding: 5px;
@@ -155,23 +153,16 @@
     height: 40px
 }
 
-.category-container {
+.categoryCreateTableButton__container {
     padding: 20px;
     width: 200px;
     background-color: lightgray;
+    border-radius: 10px;
 }
 
-.center {
-    display: flex;
-    justify-content: center;
-    height: 35px;
-}
+/* --------------------------- Category taskbox --------------------------- */
 
-.AddCategory {
-    display: flex;
-}
-
-.Box {
+.taskbox {
     display: block;
     border: 1px solid black;
     background-color: rgb(209, 222, 251); 
@@ -180,11 +171,28 @@
     margin-bottom: 10px;
     
 }
-.categoryBorders {
-    border-radius: 10px;
-    margin-right: 5px;
+
+.taskboxTitle {
+    display: block;
+    border: 1px solid black;
+    background-color: rgb(209, 222, 251); 
+    width: 200px;
+    padding: 10px;
+    border-block-start: none;
+    border-inline: none;
+    margin-block-start: auto;
+    padding-inline: initial;
 }
 
-.subTitle {
-    padding: 5px;
+.checkBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: x-small;
+}
+
+.checkBox__container{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
 }
