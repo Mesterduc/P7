@@ -73,6 +73,11 @@ function createTask(event) {
 
 	let taskbox = document.createElement('section'); // Create the container for taskbox
 	taskbox.classList.add('taskbox'); // adds class to the taskbox
+	let span = document.createElement('span'); // Create span for the delete button
+	span.innerHTML = 'x'; // adds x to the span
+	span.classList.add('taskboxDelete'); // adds class to the span
+	span.addEventListener('click', (event) => deleteTask(event));
+	taskbox.append(span); // adds the span to the taskbox
 
 	// Task Header ----------------------------------------
 	// task title
@@ -118,6 +123,11 @@ function createTask(event) {
 
 	// closes the taskbox and resets the form
 	showTaskBox();
+}
+
+function deleteTask(event) {
+	let task = event.target.closest('.taskbox');
+	task.remove();
 }
 
 // Creates a dropdown box with 3 options to choose between

@@ -59,6 +59,7 @@ sections for styling the page:
     height: 100%;
     position: absolute;
     background-color: aliceblue;
+    z-index: 1;
 }
 
 /* Center the from in */
@@ -192,6 +193,7 @@ sections for styling the page:
 /* --------------------------- 6. Category taskbox --------------------------- */
 
 .taskbox {
+    position: relative;
     display: block;
     border: 1px solid black;
     background-color: rgb(209, 222, 251); 
@@ -207,12 +209,22 @@ sections for styling the page:
     background-color: rgb(209, 222, 251); 
     width: 200px;
     padding: 10px;
+    text-align: center;
     border-block-start: none;
     border-inline: none;
     margin-block-start: auto;
     padding-inline: initial;
 }
-
+.taskboxDelete {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    padding: 3px;
+}
+.taskboxDelete:hover {
+    color: red;
+    cursor: pointer;
+}
 .checkBox {
     display: flex;
     flex-direction: column;
