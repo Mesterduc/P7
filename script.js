@@ -135,14 +135,13 @@ function dropdown() {
 	let subTitle = ['TODO', 'IN PROGRESS', 'DONE'];
 
 	let select = document.createElement('select');
-	select.name = 'choices';
-	select.id = 'choices';
 
-	for (const val of subTitle) {
+	for (let i = 0; i < subTitle.length; i++) {
 		//loop between 'TODO', 'IN PROGRESS' and 'DONE'
+		const value = subTitle[i];
 		let option = document.createElement('option');
-		option.value = val;
-		option.text = val;
+		option.value = value;
+		option.text = value;
 		select.appendChild(option);
 	}
 

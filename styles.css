@@ -51,7 +51,7 @@ sections for styling the page:
     text-align: center;
 }
 
-/* --------------------------- 2. Create Task form --------------------------- */
+/* --------------------------- 2. Create member form --------------------------- */
 
 /* Create members box background */
 .createMembers_container{
@@ -111,6 +111,7 @@ sections for styling the page:
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 /* --------------------------- 5. Category table --------------------------- */
