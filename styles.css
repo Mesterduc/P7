@@ -106,7 +106,7 @@ sections for styling the page:
 
 /* --------------------------- 4. Create category form --------------------------- */
 
-.createCategory__container {
+.createChapter__container {
     width: 250px;
     position: absolute;
     left: 50%;
@@ -136,14 +136,14 @@ sections for styling the page:
     position: relative;
 }
 
-.deleteCategory {
+.deleteChapter {
     position: absolute;
     top: 50%;
     right: 0;
     transform: translate(-50%, -50%);
 }
 
-.deleteCategory:hover {
+.deleteChapter:hover {
     cursor: pointer;
     color: red;
 }
