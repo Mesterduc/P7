@@ -218,7 +218,7 @@ function createCategory(event) {
 
 	// creates the 3 sections for the category
 	for (let i = 0; i < subTitle.length; i++) {
-		let subTitleRow = createTableSubtitleRow(subTitle[i]);
+		let subTitleRow = createStageRow(subTitle[i]);
 		section.append(subTitleRow);
 
 		// If the the element in the subTitle array is equel 'TODO' it creates the button to add task for the section
@@ -241,7 +241,7 @@ function deleteCategory(event) {
 }
 
 // Create subtitle row: todo, progress and done
-function createTableSubtitleRow(title) {
+function createStageRow(title) {
 	let h4 = document.createElement('h4');
 	if (title === 'TODO') {
 		h4.classList.add('categoryTodo');
