@@ -34,12 +34,12 @@ function addMemberToForm() {
 }
 // Appends the members to users array
 function createMembers() {
-	let names = document.getElementsByClassName('names');
+	let name = document.getElementsByClassName('names');
 	//to set names into checkbox
-	for (let i = 0; i < names.length; i++) {
+	for (let i = 0; i < name.length; i++) {
 		// If input isn't empty: append the user
-		if (names[i].value != '') {
-			users.push(names[i].value);
+		if (name[i].value != '') {
+			users.push(name[i].value);
 		}
 	}
 
