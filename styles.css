@@ -293,6 +293,7 @@ sections for styling the page:
 
 .dialog_button {
     margin: 0 5px 0 5px;
+    font-family: 'Times New Roman', Times, serif;
 }
 .dialogButton_container {
     display: flex;
