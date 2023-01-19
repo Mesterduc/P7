@@ -325,10 +325,3 @@ sections for styling the page:
     display: inline-block;
 }
 
-.categoryButton {
-    border-radius: 4px;
-    white-space: nowrap;
-    background: rgb(105, 131, 100);
-    margin: 4px 0 4px 0;
-    width: 80px;
-}
