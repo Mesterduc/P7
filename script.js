@@ -181,7 +181,6 @@ function showChapterBox() {
 }
 
 // Create chapter section
-// function deleteObject(event, tag) {}
 function toggleDialog(event, tag) {
 	const favDialog = document.getElementById('favDialog');
 	const confirmBtn = favDialog.querySelector('#confirmBtn');
