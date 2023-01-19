@@ -304,7 +304,7 @@ sections for styling the page:
 .dialog_confirm {
     border-radius: 70px;
     white-space: nowrap;
-    background: rgb(213 173 93);;
+    background: rgb(213, 173, 93);;
     display: inline-block;
     border-color: #626c93;
     border-style: outset;
@@ -319,6 +319,7 @@ sections for styling the page:
 }
 
 .submitMember_button {
+    margin-bottom: 5px;
     border-radius: 70px;
     white-space: nowrap;
     width: 150px;
