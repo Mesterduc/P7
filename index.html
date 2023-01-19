@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <!-- sprog -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- ^reading characters -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- compatility to device -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DAD Project Management</title>
-    <!-- title on webpage -->
-    <link rel="stylesheet" href="styles.css" />
-    <!-- links to CSS stylesheet-->
-  </head>
-  <!-- all html content must be in body - defines the whole code-->
 
-  <body class="font">
-    <h1 class="systemName">DAD Project Management System</h1>
+<head>
+  <meta charset="UTF-8" />
+  <!-- ^reading characters -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- compatility to device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAD Project Management</title>
+  <!-- title on webpage -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- links to CSS stylesheet-->
+</head>
+<!-- all html content must be in body - defines the whole code-->
 
-    <!-- Create members -->
-    <section class="createMembers createMembers_container">
+<body class="font">
+  <h1 class="systemName">DAD Project Management System</h1>
+
+  <!-- Create members -->
+  <!-- <section class="createMembers createMembers_container">
       <section class="createMembers__position">
         <section class="memberBox">
           <label>Write initials of all group members:</label>
@@ -58,127 +59,112 @@
           <button class="submitButton" onclick="createMembers()">Submit</button>
         </section>
       </section>
-    </section>
+    </section> -->
 
-    <!-- Create task form -->
-    <section class="hideBox createTask__container">
-      <form class="taskform">
-        <!--Implementing the remove (x) bottom-->
-        <span
-          onclick="showTaskBox(event)"
-          class="closeButton"
-          title="Close Modal"
-          >×</span
-        >
-        <section class="fieldset">
-          <label>Title:</label>
-          <input
-            class="createTaskInputName"
-            type="text"
-            title="Task title"
-            placeholder="Task title"
-          />
-          <label>Task description:</label>
-          <textarea
-            class="createTaskTextarea"
-            title="Task description"
-            placeholder="Task description"
-          ></textarea>
-          <article class="submit__button">
-            <button onclick="createTask(event)">Submit</button>
-          </article>
+  <!-- Create task form -->
+  <section class="hideBox createTask__container">
+    <form class="taskform">
+      <!--Implementing the remove (x) bottom-->
+      <span onclick="showTaskBox(event)" class="closeButton" title="Close Modal">×</span>
+      <section class="fieldset">
+        <label>Title:</label>
+        <input class="createTaskInputName" type="text" title="Task title" placeholder="Task title" />
+        <label>Task description:</label>
+        <textarea class="createTaskTextarea" title="Task description" placeholder="Task description"></textarea>
+        <article class="submit__button">
+          <button onclick="createTask(event)">Submit</button>
+        </article>
+      </section>
+    </form>
+  </section>
+
+  <!-- Create category form -->
+  <section class="hideBox createChapter__container">
+    <form class="categoryForm">
+      <!--Implementing the remove (x) botton-->
+      <span onclick="showChapterBox()" class="closeButton" title="Close Modal">×</span>
+      <section class="fieldset">
+        <label>Chapter title:</label>
+        <input class="formInputName" type="text" title="task category" placeholder="Chapter title" />
+        <article class="submit__button">
+          <button onclick="createChapter(event)">Add</button>
+        </article>
+      </section>
+    </form>
+  </section>
+
+  <dialog id="favDialog">
+    <form method="dialog">
+      <h3>Are you sure you want to delete?</h3>
+      <div>
+        <button value="cancel">Cancel</button>
+        <button id="confirmBtn" value="default">Confirm</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Categories -->
+  <section class="category__container">
+    <section class="category">
+      <section class="categoryTable">
+        <section class="categoryTitle__container">
+          <h1 class="categoryTitle">Introduction</h1>
+          <span class="deleteChapter" onclick="toggleDialog(event)">x</span>
         </section>
-      </form>
-    </section>
-
-    <!-- Create category form -->
-    <section class="hideBox createChapter__container">
-      <form class="categoryForm">
-        <!--Implementing the remove (x) botton-->
-        <span onclick="showChapterBox()" class="closeButton" title="Close Modal"
-          >×</span
-        >
-        <section class="fieldset">
-          <label>Chapter title:</label>
-          <input
-            class="formInputName"
-            type="text"
-            title="task category"
-            placeholder="Chapter title"
-          />
-          <article class="submit__button">
-            <button onclick="createChapter(event)">Add</button>
-          </article>
-        </section>
-      </form>
-    </section>
-
-    <!-- Categories -->
-    <section class="category__container">
-      <section class="category">
-        <section class="categoryTable">
-          <section class="categoryTitle__container">
-            <h1 class="categoryTitle">Introduction</h1>
-            <span class="deleteChapter" onclick="deleteChapter(event)">x</span>
-          </section>
         </br>
-          <div class="categoryButton__container">
-            <button onclick="showTaskBox(event)" class="categoryButton">
-              + Add task
-            </button>
-          </div>
-          <h4 class="categoryTodo">TODO</h4>
-          <h4 class="categoryIn-progress">IN PROGRESS</h4>
-          <h4 class="categoryDone">DONE</h4>
-        </section>
-
-        <section class="categoryTable">
-          <section class="categoryTitle__container">
-            <h1 class="categoryTitle">Problem analysis</h1>
-            <span class="deleteChapter" onclick="deleteChapter(event)">x</span>
-          </section>
-          <br />
-          <div class="categoryButton__container">
-            <button onclick="showTaskBox(event)" class="categoryButton">
-              + Add task
-            </button>
-          </div>
-          <h4 class="categoryTodo">TODO</h4>
-          <h4 class="categoryIn-progress">IN PROGRESS</h4>
-          <h4 class="categoryDone">DONE</h4>
-        </section>
-
-        <section class="categoryTable">
-          <section class="categoryTitle__container">
-            <h1 class="categoryTitle">Methods</h1>
-            <span class="deleteChapter" onclick="deleteChapter(event)">x</span>
-          </section>
-          <br />
-          <div class="categoryButton__container">
-            <button onclick="showTaskBox(event)" class="categoryButton">
-              + Add task
-            </button>
-          </div>
-          <h4 class="categoryTodo">TODO</h4>
-          <h4 class="categoryIn-progress">IN PROGRESS</h4>
-          <h4 class="categoryDone">DONE</h4>
-        </section>
+        <div class="categoryButton__container">
+          <button onclick="showTaskBox(event)" class="categoryButton">
+            + Add task
+          </button>
+        </div>
+        <h4 class="categoryTodo">TODO</h4>
+        <h4 class="categoryIn-progress">IN PROGRESS</h4>
+        <h4 class="categoryDone">DONE</h4>
       </section>
 
-      <!-- Opens create table form -->
-      <div
-        class="categoryButton__container categoryCreateTableButton__container"
-      >
-        <button
-          onclick="showChapterBox()"
-          class="categoryButton categoryCreateTableButton__button"
-        >
-          + Add chapter
-        </button>
-      </div>
+      <section class="categoryTable">
+        <section class="categoryTitle__container">
+          <h1 class="categoryTitle">Problem analysis</h1>
+          <span class="deleteChapter" onclick="toggleDialog(event)">x</span>
+        </section>
+        <br />
+        <div class="categoryButton__container">
+          <button onclick="showTaskBox(event)" class="categoryButton">
+            + Add task
+          </button>
+        </div>
+        <h4 class="categoryTodo">TODO</h4>
+        <h4 class="categoryIn-progress">IN PROGRESS</h4>
+        <h4 class="categoryDone">DONE</h4>
+      </section>
+
+      <section class="categoryTable">
+        <section class="categoryTitle__container">
+          <h1 class="categoryTitle">Methods</h1>
+          <span class="deleteChapter" onclick="toggleDialog(event)">x</span>
+        </section>
+        <br />
+        <div class="categoryButton__container">
+          <button onclick="showTaskBox(event)" class="categoryButton">
+            + Add task
+          </button>
+        </div>
+        <h4 class="categoryTodo">TODO</h4>
+        <h4 class="categoryIn-progress">IN PROGRESS</h4>
+        <h4 class="categoryDone">DONE</h4>
+      </section>
     </section>
 
-    <!--links to javascript-->
-    <script src="script.js"></script>
-  </body>
+    <!-- Opens create table form -->
+    <div class="categoryButton__container categoryCreateTableButton__container">
+      <button onclick="showChapterBox()" class="categoryButton categoryCreateTableButton__button">
+        + Add chapter
+      </button>
+    </div>
+  </section>
+
+  <!--links to javascript-->
+  <script src="script.js"></script>
+</body>
+
 </html>
