@@ -76,7 +76,7 @@ function createTask(event) {
 	let span = document.createElement('span'); // Create span for the delete button
 	span.innerHTML = 'x'; // adds x to the span
 	span.classList.add('taskboxDelete'); // adds class to the span
-	span.addEventListener('click', (event) => deleteTask(event));
+	span.addEventListener('click', (event) => toggleDialog(event, '.taskbox'));
 	taskbox.append(span); // adds the span to the taskbox
 
 	// Task Header ----------------------------------------
@@ -181,28 +181,20 @@ function showChapterBox() {
 }
 
 // Create chapter section
-function deleteObject(event, place, text) {
-	// const showButton = document.getElementById('showDialog');
-	// const favDialog = document.getElementById('favDialog');
-	const outputBox = document.querySelector('output');
-	const selectEl = favDialog.querySelector('select');
+// function deleteObject(event, tag) {}
+function toggleDialog(event, tag) {
+	const favDialog = document.getElementById('favDialog');
 	const confirmBtn = favDialog.querySelector('#confirmBtn');
 
 	confirmBtn.addEventListener('click', (e) => {
-		// confirmBtn.value = selectEl.value;
-		// console.log(event.target.closest('.categoryTable'));
-		let task = event.target.closest('.categoryTable');
+		let task = event.target.closest(tag);
 		task.remove();
 	});
-	// "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
+
 	favDialog.addEventListener('close', () => {
 		console.log('close dialog');
 	});
-}
-function toggleDialog(event) {
-	const favDialog = document.getElementById('favDialog');
 	favDialog.showModal();
-	deleteObject(event);
 }
 
 // Create category table section
@@ -227,7 +219,7 @@ function createChapter(event) {
 	deleteButton.classList.add('deleteChapter');
 	deleteButton.innerHTML = 'x';
 
-	deleteButton.addEventListener('click', (event) => toggleDialog(event));
+	deleteButton.addEventListener('click', (event) => toggleDialog(event, '.categoryTable'));
 
 	let h1 = document.createElement('h1');
 	h1.classList.add('categoryTitle'); //h1 gets chapterTitle styling
