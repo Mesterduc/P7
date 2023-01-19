@@ -11,10 +11,21 @@ sections for styling the page:
 
 
 /* --------------------------- 1. Reused styling --------------------------- */
+.font {
+    font-family:'Times New Roman', Times, serif;
+}
 
 /* hidebox */
 .hideBox{
     display: none;
+}
+
+/*h1 styling*/
+.systemName {
+    color: #616989;
+    text-align: center;
+    -webkit-text-stroke-width: thin;
+    text-shadow: #6f4d0a 1px 0 20px;
 }
 
 /* Styling the closing x, its position and colour */
@@ -24,9 +35,9 @@ sections for styling the page:
     right: -20px;
     font-size: 35px;
     font-weight: bold;
-    color: #070000;
     border: none;
     background-color: transparent;
+    color: black;
 }
 
 /* Colour x when it is pointed at */
@@ -35,17 +46,17 @@ sections for styling the page:
     cursor: pointer;
 }
 
-.submit__button {
-    margin-top: 5px;
-    display: flex;
+.submitButton {
     justify-content: center;
     align-items: center;
+    border-style: double;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .fieldset {
     display: flex;
     flex-direction: column;
-    background-color: darkgray;
+    background-color: rgb(161 167 189);
     padding: 10px;
     font-size: larger;
     text-align: center;
@@ -58,7 +69,7 @@ sections for styling the page:
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     z-index: 1;
 }
 
@@ -68,25 +79,43 @@ sections for styling the page:
     left: 50%;
     top: 30%;
     transform: translate(-50%, -50%);
-    border: solid black;
+    border-style: initial;
 }
 
 .memberBox{
-    background-color: darkgray;
-    width: 300px;
+    background-color: #e1e2d7;
+    width: 350px;
     padding: 10px;
     font-size: larger;
     text-align: center;
+    border-style: solid;
+    border-width: thin;
 }
+
 .names {
     margin-top: 3px;
     margin-bottom: 3px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .memberInput {
+    margin-bottom: 10px;
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.submitButton {
+    border-radius: 20px;
+    color: white;
+    margin: 10px;
+    background-color: #626c93;
+    border-color:rgb(213 173 93);
+    border-width: medium;
+    width: 80px;
+    font-size: 16px;
+    border-style:outset;
 }
 
 /* --------------------------- 3. Create members form --------------------------- */
@@ -102,7 +131,13 @@ sections for styling the page:
 .createTaskTextarea {
     height: 75px;
     resize: none;
+    font-family: sans-serif;
 }
+
+.createTaskInputName {
+    font-family: sans-serif;
+}
+
 
 /* --------------------------- 4. Create category form --------------------------- */
 
@@ -127,7 +162,7 @@ sections for styling the page:
 }
 
 .categoryTable {
-    background-color: lightgray;
+    background-color: #efeff2;
     border-radius: 10px;
     margin-right: 5px;
     padding: 10px;
@@ -141,20 +176,24 @@ sections for styling the page:
     top: 50%;
     right: 0;
     transform: translate(-50%, -50%);
+    color: white;
+    padding: 3px;
 }
 
 .deleteChapter:hover {
     cursor: pointer;
-    color: red;
+    color: rgb(139, 59, 59);
 }
 
 .categoryTitle {
-    background-color: darkgray;
+    background-color: #626c93;
     width: 200px;
     padding: 10px;
     font-size: larger;
     text-align: center;
     margin: 0px;
+    border-radius: 10px;
+    color: #efeff2;
 }
 
 .categoryButton__container {
@@ -166,9 +205,15 @@ sections for styling the page:
 .categoryButton {
     border-radius: 70px;
     white-space: nowrap;
-    background: rgb(105, 131, 100);
+    background: rgb(213 173 93);
     width: 80%;
     display: inline-block;
+    border-color: #626c93;
+    border-style: outset;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    
+    
 }
 
 .categoryButton:hover {
@@ -179,16 +224,19 @@ sections for styling the page:
 /* Create category table button */
 .categoryCreateTableButton__button {
     font-size: 16.5px;
-    border-radius: 10px;
     padding: 5px;
     width: 150px;
-    height: 40px
+    color: black;
+    border-radius: 20px;
+    
+   
+
 }
 
 .categoryCreateTableButton__container {
-    padding: 20px;
+    padding: 15px;
     width: 200px;
-    background-color: lightgray;
+    background-color: #efeff2;
     border-radius: 10px;
 }
 
@@ -198,7 +246,7 @@ sections for styling the page:
     position: relative;
     display: block;
     border: 1px solid black;
-    background-color: rgb(209, 222, 251); 
+    background-color: #f2eadb;
     width: 200px;
     padding: 10px;
     margin-bottom: 10px;
@@ -208,7 +256,7 @@ sections for styling the page:
 .taskboxTitle {
     display: block;
     border: 1px solid black;
-    background-color: rgb(209, 222, 251); 
+    background-color: #f2eadb;
     width: 200px;
     padding: 10px;
     text-align: center;

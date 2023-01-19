@@ -3,7 +3,7 @@ Section of the file
   # 1. global variables and users array
   # 2. Create members - category form and button action
   # 3. Task - task form, button action, dropdown and moveTaskBox
-  # 4. Category - Category table and form - category form, form button action and create category
+  # 4. Category - Category table and form - category form, form button action and create chapter
 */
 
 /* --------------------------- 1. global variables and users array --------------------------- */
@@ -80,7 +80,6 @@ function createTask(event) {
   taskbox.append(span); // adds the span to the taskbox
 
   // Task Header ----------------------------------------
-  // task title
   let h4 = document.createElement("h4"); // Users input in formElement (title) will show on the screen
   taskbox.append(h4); // appends the h4 to the taskbox
 
@@ -183,7 +182,7 @@ function showChapterBox() {
   form.reset();
 }
 
-// Create category table section
+// Create chapter section
 function createChapter(event) {
   // event stops the default functionality when clicking on the button
   event.preventDefault();
@@ -192,14 +191,14 @@ function createChapter(event) {
   let categoryText =
     categoryForm.getElementsByClassName("formInputName")[0].value; // take the form input value
 
-  // create table for the category
+  // create table for the chapter
   let containerForm = document.getElementsByClassName("category")[0];
   let section = document.createElement("section");
   section.classList.add("categoryTable");
   // append the table to the html
   containerForm.append(section);
 
-  // create the header for the category
+  // create the header for the chapter
   let titleSection = document.createElement("section");
   titleSection.classList.add("categoryTitle__container");
   let deleteButton = document.createElement("span");
@@ -208,7 +207,7 @@ function createChapter(event) {
   deleteButton.addEventListener("click", (event) => deleteChapter(event));
 
   let h1 = document.createElement("h1");
-  h1.classList.add("categoryTitle"); //h1 gets categoryTitle styling
+  h1.classList.add("categoryTitle"); //h1 gets chapterTitle styling
   h1.innerHTML = categoryText; // insert form input value to table header
 
   // append elements to each other
@@ -234,7 +233,7 @@ function createChapter(event) {
       subTitleRow.parentNode.insertBefore(button, subTitleRow.nextSibling);
     }
   }
-  // Closes the category form and resets the form
+  // Closes the chapter form and resets the form
   showChapterBox(event);
 }
 
