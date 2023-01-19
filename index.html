@@ -19,47 +19,23 @@
   <h1 class="systemName">DAD Project Management System</h1>
 
   <!-- Create members -->
-  <!-- <section class="createMembers createMembers_container">
-      <section class="createMembers__position">
-        <section class="memberBox">
-          <label>Write initials of all group members:</label>
-          <section class="memberInput">
-            <input
-              class="names"
-              type="text"
-              title="Name"
-              placeholder="Member 1"
-              maxlength="4"
-            />
-            <input
-              class="names"
-              type="text"
-              title="Name"
-              placeholder="Member 2"
-              maxlength="4"
-            />
-            <input
-              class="names"
-              type="text"
-              title="Name"
-              placeholder="Member 3"
-              maxlength="4"
-            />
-            <input
-              class="names"
-              type="text"
-              title="Name"
-              placeholder="Member 4"
-              maxlength="4"
-            />
-          </section>
-          <button onclick="addMemberToForm()" class="btn categoryButton">
-            + Add a member
-          </button>
-          <button class="submitButton" onclick="createMembers()">Submit</button>
+  <section class="createMembers createMembers_container">
+    <section class="createMembers__position">
+      <section class="memberBox">
+        <label>Write initials of all group members:</label>
+        <section class="memberInput">
+          <input class="names" type="text" title="Name" placeholder="Member 1" maxlength="4" />
+          <input class="names" type="text" title="Name" placeholder="Member 2" maxlength="4" />
+          <input class="names" type="text" title="Name" placeholder="Member 3" maxlength="4" />
+          <input class="names" type="text" title="Name" placeholder="Member 4" maxlength="4" />
         </section>
+        <button onclick="addMemberToForm()" class="btn categoryButton">
+          + Add a member
+        </button>
+        <button class="submitButton" onclick="createMembers()">Submit</button>
       </section>
-    </section> -->
+    </section>
+  </section>
 
   <!-- Create task form -->
   <section class="hideBox createTask__container">
@@ -96,9 +72,9 @@
   <dialog id="favDialog">
     <form method="dialog">
       <h3>Are you sure you want to delete?</h3>
-      <div>
-        <button value="cancel">Cancel</button>
-        <button id="confirmBtn" value="default">Confirm</button>
+      <div class="dialogButton_container">
+        <button class="dialog_button " value="cancel">Cancel</button>
+        <button class="dialog_button dialog_confirm" id="confirmBtn" value="default">Confirm</button>
       </div>
     </form>
   </dialog>

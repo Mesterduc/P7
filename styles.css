@@ -212,8 +212,6 @@ sections for styling the page:
     border-style: outset;
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
-    
-    
 }
 
 .categoryButton:hover {
@@ -286,4 +284,27 @@ sections for styling the page:
     display: flex;
     justify-content: space-around;
     padding-top: 10px;
+}
+
+/* dialog -------------------------------------------------------------------------------------- */
+
+.dialog_button {
+    margin: 0 5px 0 5px;
+}
+.dialogButton_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.dialog_confirm {
+    border-radius: 70px;
+    white-space: nowrap;
+    background: rgb(213 173 93);;
+    display: inline-block;
+    border-color: #626c93;
+    border-style: outset;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
 }
