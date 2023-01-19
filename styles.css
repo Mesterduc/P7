@@ -31,7 +31,7 @@ sections for styling the page:
 
 /* Colour x when it is pointed at */
 .closeButton:hover {
-    color: #7b7c7b;
+    color: #000000;
     cursor: pointer;
 }
 
@@ -58,7 +58,7 @@ sections for styling the page:
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     z-index: 1;
 }
 
@@ -68,11 +68,11 @@ sections for styling the page:
     left: 50%;
     top: 30%;
     transform: translate(-50%, -50%);
-    border: solid black;
+    border: groove black 1px;
 }
 
 .memberBox{
-    background-color: darkgray;
+    background-color: rgb(201, 219, 204);
     width: 300px;
     padding: 10px;
     font-size: larger;
@@ -166,7 +166,7 @@ sections for styling the page:
 .categoryButton {
     border-radius: 70px;
     white-space: nowrap;
-    background: rgb(105, 131, 100);
+    background: rgb(249, 140, 8);
     width: 80%;
     display: inline-block;
 }

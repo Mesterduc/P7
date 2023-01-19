@@ -218,21 +218,12 @@ function createChapter(event) {
 
   // array of category we want as default
   let subTitle = ["TODO", "IN PROGRESS", "DONE"];
+  section.append(createTaskButton());
 
   // creates the 3 sections for the category
   for (let i = 0; i < subTitle.length; i++) {
     let subTitleRow = createStageRow(subTitle[i]);
     section.append(subTitleRow);
-
-    // If the the element in the subTitle array is equel 'TODO' it creates the button to add task for the section
-    if (subTitle[i] === "TODO") {
-      // Calls createTaskButton function that creates the button
-      let button = createTaskButton();
-
-      // Append the button after the TODO
-      // findes the parent node and inserts the button after the 'TODO' section
-      subTitleRow.parentNode.insertBefore(button, subTitleRow.nextSibling);
-    }
   }
   // Closes the category form and resets the form
   showChapterBox(event);
