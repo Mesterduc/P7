@@ -312,6 +312,11 @@ sections for styling the page:
     font-size: 17px;
 }
 
+.dialog_confirm:hover {
+    color: rgb(82, 79, 79);
+    cursor: pointer;
+}
+
 .center {
     display: flex;
     align-items: center;
