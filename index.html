@@ -24,15 +24,17 @@
       <section class="memberBox">
         <label>Write initials of all group members:</label>
         <section class="memberInput">
-          <input class="names" type="text" title="Name" placeholder="Member 1" maxlength="4" />
-          <input class="names" type="text" title="Name" placeholder="Member 2" maxlength="4" />
-          <input class="names" type="text" title="Name" placeholder="Member 3" maxlength="4" />
-          <input class="names" type="text" title="Name" placeholder="Member 4" maxlength="4" />
+          <input class="names" type="text" title="Name" placeholder="Member 1 - max 4 characters" maxlength="4" />
+          <input class="names" type="text" title="Name" placeholder="Member 2 - max 4 characters" maxlength="4" />
+          <input class="names" type="text" title="Name" placeholder="Member 3 - max 4 characters" maxlength="4" />
+          <input class="names" type="text" title="Name" placeholder="Member 4 - max 4 characters" maxlength="4" />
         </section>
-        <button onclick="addMemberToForm()" class="btn categoryButton">
-          + Add a member
+        <button class="submitMember_button" onclick="addMemberToForm()" class="btn categoryButton">
+          + Member
         </button>
-        <button class="submitButton" onclick="createMembers()">Submit</button>
+        <div class="center">
+          <button class="submitMember_button submitButton" onclick="createMembers()">Submit</button>
+        </div>
       </section>
     </section>
   </section>

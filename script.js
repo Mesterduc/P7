@@ -30,7 +30,7 @@ function addMemberToForm() {
 	// names findes all elements with class "names"
 	let name = document.getElementsByClassName('names');
 	// Input: placeholder
-	memberInput.placeholder = 'Member ' + name.length;
+	memberInput.placeholder = 'Member ' + name.length + ' - max 4 characters';
 }
 // Appends the members to users array
 function createMembers() {

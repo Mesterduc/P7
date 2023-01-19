@@ -83,6 +83,8 @@ sections for styling the page:
 }
 
 .memberBox{
+    display: flex;
+    flex-direction: column;
     background-color: #e1e2d7;
     width: 350px;
     padding: 10px;
@@ -96,6 +98,7 @@ sections for styling the page:
     margin-top: 3px;
     margin-bottom: 3px;
     font-family: 'Times New Roman', Times, serif;
+    width: 46%;
 }
 
 .memberInput {
@@ -307,4 +310,25 @@ sections for styling the page:
     border-style: outset;
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submitMember_button {
+    border-radius: 70px;
+    white-space: nowrap;
+    width: 150px;
+    display: inline-block;
+}
+
+.categoryButton {
+    border-radius: 4px;
+    white-space: nowrap;
+    background: rgb(105, 131, 100);
+    margin: 4px 0 4px 0;
+    width: 80px;
 }
