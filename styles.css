@@ -42,7 +42,7 @@ sections for styling the page:
 
 /* Colour x when it is pointed at */
 .closeButton:hover {
-    color: #7b7c7b;
+    color: #000000;
     cursor: pointer;
 }
 
