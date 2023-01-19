@@ -253,7 +253,6 @@ function createStageRow(title) {
 function createTaskButton() {
   // Create html elements
   let section = document.createElement("section");
-  let h1 = document.createElement("h1");
   let h4 = document.createElement("h4");
   let div = document.createElement("div");
   let button = document.createElement("button");
@@ -269,8 +268,7 @@ function createTaskButton() {
   });
 
   // Appends the elements to each other
-  section.append(h1);
-  h1.append(h4);
+  section.append(h4);
   h4.append(div);
   div.append(button);
 

@@ -182,7 +182,7 @@ sections for styling the page:
 
 .deleteChapter:hover {
     cursor: pointer;
-    color: rgb(139, 59, 59);
+    color: rgb(0, 0, 0);
 }
 
 .categoryTitle {
@@ -272,7 +272,7 @@ sections for styling the page:
     padding: 3px;
 }
 .taskboxDelete:hover {
-    color: red;
+    color: rgb(154, 150, 150);
     cursor: pointer;
 }
 .checkBox {
