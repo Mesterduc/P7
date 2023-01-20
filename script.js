@@ -228,6 +228,7 @@ function createChapter(event) {
 	div.append(span);
 
 	span.addEventListener('click', (event) => changeChapter(event));
+
 	div.id = 'element';
 	h1.classList.add('categoryTitle'); //h1 gets chapterTitle styling
 	span.innerHTML = categoryText; // insert form input value to table header
@@ -303,7 +304,22 @@ function changeChapter(e) {
 	let txt = e.target.innerText;
 	let element = e.target.closest('#element');
 
-	element.innerHTML = `<input class="titleInput" onblur='spanReset(event)' value='${txt}' />`;
+	let input = document.createElement('input');
+	input.classList.add('titleInput');
+	input.value = txt;
+	input.addEventListener('blur', (e) => spanReset(e));
+
+	input.addEventListener('keypress', (event) => {
+		console.log('keypress');
+		if (event.key === 'Enter') {
+			// Cancel the default action, if needed
+			event.preventDefault();
+			// Trigger the button element with a click
+			input.blur();
+		}
+	});
+	element.innerHTML = '';
+	element.append(input);
 	document.getElementsByClassName('titleInput')[0].focus();
 }
 
