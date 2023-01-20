@@ -73,7 +73,7 @@
 
   <dialog id="favDialog">
     <form method="dialog">
-      <h3>Are you sure you want to delete this?</h3>
+      <h3>Are you sure you want to delete?</h3>
       <div class="dialogButton_container">
         <button class="dialog_button " value="cancel">Cancel</button>
         <button class="dialog_button dialog_confirm" id="confirmBtn" value="default">Confirm</button>
@@ -86,7 +86,10 @@
     <section class="category">
       <section class="categoryTable">
         <section class="categoryTitle__container">
-          <h1 class="categoryTitle">Introduction</h1>
+          <h1 class="categoryTitle"> <div id="element">
+            <span onclick="changeChapter(this)"> Introduction </span> 
+          </div>
+        </h1>
           <span class="deleteChapter" onclick="toggleDialog(event, '.categoryTable')">x</span>
         </section>
         </br>

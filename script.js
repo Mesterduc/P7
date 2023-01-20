@@ -30,7 +30,7 @@ function addMemberToForm() {
 	// names findes all elements with class "names"
 	let name = document.getElementsByClassName('names');
 	// Input: placeholder
-	memberInput.placeholder = 'Member ' + name.length + ' - max 4 characters';
+	memberInput.placeholder = 'Member ' + name.length;
 }
 // Appends the members to users array
 function createMembers() {
@@ -208,6 +208,7 @@ function createChapter(event) {
 	let containerForm = document.getElementsByClassName('category')[0];
 	let section = document.createElement('section');
 	section.classList.add('categoryTable');
+
 	// append the table to the html
 	containerForm.append(section);
 
@@ -288,4 +289,18 @@ function createTaskButton() {
 
 	// Returns the button
 	return section;
+}
+
+//Change introduction
+function changeChapter(e) {
+  let txt = e.innerText;
+  let element = document.getElementById('element');
+  element.innerHTML = `<input onblur='spanReset(this)' value='${txt}' />`;
+  document.getElementsByTagName('input')[0].focus();
+}
+
+function spanReset(e) {
+  let txt = e.value;
+  let element = document.getElementById('element');
+  element.innerHTML = `<span onclick='changeChapter(this)'> ${txt} </span>`;
 }
