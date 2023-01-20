@@ -222,8 +222,15 @@ function createChapter(event) {
 	deleteButton.addEventListener('click', (event) => toggleDialog(event, '.categoryTable'));
 
 	let h1 = document.createElement('h1');
+	let div = document.createElement('div');
+	let span = document.createElement('span');
+	h1.append(div);
+	div.append(span);
+
+	div.addEventListener('click', (event) => changeChapter(event));
+	div.id = 'element';
 	h1.classList.add('categoryTitle'); //h1 gets chapterTitle styling
-	h1.innerHTML = categoryText; // insert form input value to table header
+	span.innerHTML = categoryText; // insert form input value to table header
 
 	// append elements to each other
 	titleSection.append(h1);
