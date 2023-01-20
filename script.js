@@ -227,7 +227,7 @@ function createChapter(event) {
 	h1.append(div);
 	div.append(span);
 
-	div.addEventListener('click', (event) => changeChapter(event));
+	span.addEventListener('click', (event) => changeChapter(event));
 	div.id = 'element';
 	h1.classList.add('categoryTitle'); //h1 gets chapterTitle styling
 	span.innerHTML = categoryText; // insert form input value to table header
@@ -300,6 +300,7 @@ function createTaskButton() {
 
 //Change introduction
 function changeChapter(e) {
+	console.log('🚀 ~ file: script.js:303 ~ changeChapter ~ e', e.target);
 	let txt = e.target.innerText;
 	// let element = document.getElementById('element');
 	let element = e.target.closest('#element');
