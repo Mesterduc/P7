@@ -293,14 +293,16 @@ function createTaskButton() {
 
 //Change introduction
 function changeChapter(e) {
-  let txt = e.innerText;
-  let element = document.getElementById('element');
-  element.innerHTML = `<input onblur='spanReset(this)' value='${txt}' />`;
-  document.getElementsByTagName('input')[0].focus();
+	let txt = e.target.innerText;
+	// let element = document.getElementById('element');
+	let element = e.target.closest('#element');
+
+	element.innerHTML = `<input class="titleInput" onblur='spanReset(event)' value='${txt}' />`;
+	document.getElementsByClassName('titleInput')[0].focus();
 }
 
 function spanReset(e) {
-  let txt = e.value;
-  let element = document.getElementById('element');
-  element.innerHTML = `<span onclick='changeChapter(this)'> ${txt} </span>`;
+	let txt = e.target.value;
+	let element = e.target.closest('#element');
+	element.innerHTML = `<span onclick='changeChapter(event)'> ${txt} </span>`;
 }
