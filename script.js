@@ -81,14 +81,28 @@ function createTask(event) {
 
 	// Task Header ----------------------------------------
 	let h4 = document.createElement('h4'); // Users input in formElement (title) will show on the screen
-	taskbox.append(h4); // appends the h4 to the taskbox
+	// let h1 = document.createElement('h1');
+	let div = document.createElement('div');
+	taskbox.append(div); // appends the h4 to the taskbox
+	div.append(h4); // appends the h4 to the taskbox
+	// let span = document.createElement('span');
+	// h1.append(div);
+	// div.append(span);
+	div.id = 'element';
+	h4.addEventListener('click', (event) => changeChapter(event, 'h4', 'taskboxTitle'));
 
 	h4.innerHTML = formElement.value; // Sets the h4 value
 	h4.classList.add('taskboxTitle'); // adds class to the h4
 
 	// Task description ----------------------------------------
+	let divBody = document.createElement('div');
+	divBody.id = 'element';
+	divBody.classList.add('taskboxBody');
 	let h5 = document.createElement('h5'); //Users input in formTextarea (Task describtion) will show on the screen
-	taskbox.append(h5);
+	taskbox.append(divBody);
+	divBody.append(h5);
+
+	h5.addEventListener('click', (event) => changeChapter(event, 'h5'));
 	// Sets the h5 value
 	h5.innerHTML = formTextarea.value;
 	//to make a checkbox window
@@ -227,7 +241,7 @@ function createChapter(event) {
 	h1.append(div);
 	div.append(span);
 
-	span.addEventListener('click', (event) => changeChapter(event));
+	span.addEventListener('click', (event) => changeChapter(event, 'span'));
 
 	div.id = 'element';
 	h1.classList.add('categoryTitle'); //h1 gets chapterTitle styling
@@ -300,21 +314,23 @@ function createTaskButton() {
 }
 
 //Change introduction
-function changeChapter(e) {
+function changeChapter(e, tag, className) {
 	let txt = e.target.innerText;
 	let element = e.target.closest('#element');
 
 	let input = document.createElement('input');
 	input.classList.add('titleInput');
 	input.value = txt;
-	input.addEventListener('blur', (e) => spanReset(e));
+	// when input is unfocused, the input is removed and the span is added back
+	input.addEventListener('blur', (e) => spanReset(e, tag, className));
 
+	// when enter is pressed, the blur happend on the input
 	input.addEventListener('keypress', (event) => {
 		console.log('keypress');
 		if (event.key === 'Enter') {
 			// Cancel the default action, if needed
 			event.preventDefault();
-			// Trigger the button element with a click
+			// Trigger the blur event on input
 			input.blur();
 		}
 	});
@@ -323,8 +339,14 @@ function changeChapter(e) {
 	document.getElementsByClassName('titleInput')[0].focus();
 }
 
-function spanReset(e) {
+function spanReset(e, tag, className) {
 	let txt = e.target.value;
 	let element = e.target.closest('#element');
-	element.innerHTML = `<span onclick='changeChapter(event)'> ${txt} </span>`;
+	let newTag = document.createElement(tag);
+	newTag.addEventListener('click', (event) => changeChapter(event, tag, className));
+	newTag.innerHTML = txt;
+	newTag.classList.add(className);
+	element.innerHTML = '';
+	element.append(newTag);
+	// element.innerHTML = `<span onclick='changeChapter(event)'> ${txt} </span>`;
 }

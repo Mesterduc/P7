@@ -332,3 +332,12 @@ sections for styling the page:
     display: inline-block;
 }
 
+#element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskboxBody {
+    margin: 10px;
+}
