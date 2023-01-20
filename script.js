@@ -300,9 +300,7 @@ function createTaskButton() {
 
 //Change introduction
 function changeChapter(e) {
-	console.log('🚀 ~ file: script.js:303 ~ changeChapter ~ e', e.target);
 	let txt = e.target.innerText;
-	// let element = document.getElementById('element');
 	let element = e.target.closest('#element');
 
 	element.innerHTML = `<input class="titleInput" onblur='spanReset(event)' value='${txt}' />`;
