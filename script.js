@@ -14,6 +14,8 @@ let users = [];
 // Store the last table/section where user clicked on addtask button
 let chosenSection;
 
+let columns = document.querySelectorAll('.categoryTable');
+
 /* --------------------------- 2. Create members - category form and button action --------------------------- */
 
 // Adds a member to the memberform
@@ -222,6 +224,11 @@ function createChapter(event) {
 	let containerForm = document.getElementsByClassName('category')[0];
 	let section = document.createElement('section');
 	section.classList.add('categoryTable');
+	// add drag and drop functionality
+	section.draggable = true;
+	section.addEventListener('dragstart', (e) => dragStart(e));
+	section.addEventListener('dragend', (e) => dragEnd(e));
+	section.addEventListener('dragenter', (e) => dragEnter(e));
 
 	// append the table to the html
 	containerForm.append(section);
@@ -349,4 +356,63 @@ function spanReset(e, tag, className) {
 	element.innerHTML = '';
 	element.append(newTag);
 	// element.innerHTML = `<span onclick='changeChapter(event)'> ${txt} </span>`;
+}
+
+// drag and drop of chapters ----------------------------------------------------------------------------------------------
+
+let start;
+let currentHover;
+
+columns.forEach((column) => {
+	column.addEventListener('dragstart', (e) => dragStart(e));
+	column.addEventListener('dragend', (e) => dragEnd(e));
+	column.addEventListener('dragenter', (e) => dragEnter(e));
+});
+
+function dragStart(e) {
+	// console.log('drag started');
+	columns = document.querySelectorAll('.categoryTable');
+	// start value for: start and currentHover
+	currentHover = e.target;
+	start = e.target;
+}
+
+function dragEnd(e) {
+	// console.log('drag ended');
+	// reset the opacity
+	currentHover.style.opacity = '1';
+
+	// find index of start and currentHover table
+	let indexOfStart = findindex(start);
+	let indexOfCurrentHover = findindex(currentHover);
+
+	// if start is before currentHover, insert start after currentHover
+	if (indexOfStart < indexOfCurrentHover) {
+		currentHover.parentNode.insertBefore(start, currentHover.nextSibling);
+	}
+	// if start is after currentHover, insert start before currentHover
+	if (indexOfStart > indexOfCurrentHover) {
+		currentHover.parentNode.insertBefore(start, currentHover);
+	}
+}
+function findindex(item) {
+	for (let i = 0; i < columns.length; i++) {
+		if (columns[i] === item) {
+			return i;
+		}
+	}
+}
+function dragEnter(e) {
+	// console.log('drag entered');
+	// find the table that is hovered over
+	let enterTable = e.target.closest('.categoryTable');
+
+	// if cureentHover is not the same as enterTable
+	if (currentHover !== enterTable) {
+		// reset the opacity of currentHover
+		currentHover.style.opacity = '1';
+		// set currentHover to enterTable and sets its opacity to 0.4
+		currentHover = enterTable;
+		currentHover.style.opacity = '0.4';
+	}
 }
